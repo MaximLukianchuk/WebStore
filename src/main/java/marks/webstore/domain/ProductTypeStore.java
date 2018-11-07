@@ -12,26 +12,13 @@ public class ProductTypeStore {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column (name = "Price")
     private double price;
-
-    @Column (name = "Amount")
     private int amount;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "StoreId")
-    private Store store;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ProductTypeId")
-    private ProductType productType;
 
     public ProductTypeStore() {
     }
 
-    public ProductTypeStore(ProductType productType, Store store, double price, int amount) {
-        this.productType = productType;
-        this.store = store;
+    public ProductTypeStore(double price, int amount) {
         this.price = price;
         this.amount = amount;
     }
@@ -56,24 +43,4 @@ public class ProductTypeStore {
         this.amount = amount;
     }
 
-    public Store getStore() {
-        return this.store;
-    }
-
-    public void setStore(Store store) {
-        this.store = store;
-    }
-
-    public ProductType getProductType() {
-        return productType;
-    }
-
-    public void setProductType(ProductType productType) {
-        this.productType = productType;
-    }
-
-    @Override
-    public String toString() {
-        return price + " " + amount;
-    }
 }
