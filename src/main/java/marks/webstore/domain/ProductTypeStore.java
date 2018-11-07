@@ -8,9 +8,8 @@ import java.util.UUID;
 public class ProductTypeStore {
 
     @Id
-    @Column(name = "Id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
 
     private double price;
     private int amount;

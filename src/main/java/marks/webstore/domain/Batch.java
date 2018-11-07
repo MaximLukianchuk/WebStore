@@ -7,7 +7,7 @@ public class Batch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     private String date;
     private int amount;
