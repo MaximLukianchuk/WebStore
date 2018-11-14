@@ -14,6 +14,14 @@ public class ProductTypeStore {
     private double price;
     private int amount;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_type_id")
+    private ProductType product;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "store_id")
+    private Store store;
+
     public ProductTypeStore() {
     }
 
