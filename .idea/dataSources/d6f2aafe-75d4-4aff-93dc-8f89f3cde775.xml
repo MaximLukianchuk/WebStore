@@ -97,7 +97,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-11-07.15:22:02.026</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-11-12.23:38:56.098</IntrospectionTimestamp>
+      <IntrospectionStateNumber>589</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -143,5 +144,230 @@
       <HandlerId>335</HandlerId>
       <Type>index</Type>
     </access-method>
+    <sequence id="26" parent="19" name="hibernate_sequence">
+      <ObjectId>16432</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>586</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <sequence id="27" parent="19" name="store_id_seq">
+      <ObjectId>16406</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>582</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <table id="28" parent="19" name="batch">
+      <ObjectId>16417</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>583</StateNumber>
+    </table>
+    <table id="29" parent="19" name="product_type">
+      <ObjectId>16422</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>584</StateNumber>
+    </table>
+    <table id="30" parent="19" name="product_type_store">
+      <ObjectId>16427</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>585</StateNumber>
+    </table>
+    <table id="31" parent="19" name="store">
+      <ObjectId>16408</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>582</StateNumber>
+    </table>
+    <table id="32" parent="19" name="user_role">
+      <ObjectId>16434</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>589</StateNumber>
+    </table>
+    <table id="33" parent="19" name="usr">
+      <ObjectId>16437</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>589</StateNumber>
+    </table>
+    <column id="34" parent="28" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>583</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="35" parent="28" name="amount">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>583</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="36" parent="28" name="date">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>583</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="37" parent="28" name="batch_pkey">
+      <ObjectId>16420</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="38" parent="28" name="batch_pkey">
+      <ObjectId>16421</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>batch_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="29" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>584</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="40" parent="29" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>584</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="41" parent="29" name="product_type_pkey">
+      <ObjectId>16425</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="42" parent="29" name="product_type_pkey">
+      <ObjectId>16426</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>product_type_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="30" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>585</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="44" parent="30" name="amount">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>585</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="45" parent="30" name="price">
+      <Position>3</Position>
+      <DataType>double precision|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>585</StateNumber>
+      <TypeId>701</TypeId>
+    </column>
+    <index id="46" parent="30" name="product_type_store_pkey">
+      <ObjectId>16430</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="47" parent="30" name="product_type_store_pkey">
+      <ObjectId>16431</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>product_type_store_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="48" parent="31" name="id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>582</StateNumber>
+      <DefaultExpression>nextval(&apos;store_id_seq&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+      <SequenceName>store_id_seq</SequenceName>
+    </column>
+    <column id="49" parent="31" name="address">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>582</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="50" parent="31" name="name">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>582</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="51" parent="31" name="store_pkey">
+      <ObjectId>16415</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="52" parent="31" name="store_pkey">
+      <ObjectId>16416</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>store_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="32" name="user_id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>587</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="54" parent="32" name="roles">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>587</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <foreign-key id="55" parent="32" name="fkfpm8swft53ulq2hl11yplpr5">
+      <ObjectId>16445</ObjectId>
+      <ColNames>user_id</ColNames>
+      <RefTableId>16437</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>usr</RefTableName>
+      <RefKeyName>usr_pkey</RefKeyName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="56" parent="33" name="id">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>588</StateNumber>
+      <TypeId>20</TypeId>
+    </column>
+    <column id="57" parent="33" name="active">
+      <Position>2</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>588</StateNumber>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="58" parent="33" name="password">
+      <Position>3</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>588</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="59" parent="33" name="username">
+      <Position>4</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>588</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="60" parent="33" name="usr_pkey">
+      <ObjectId>16443</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="61" parent="33" name="usr_pkey">
+      <ObjectId>16444</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>usr_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

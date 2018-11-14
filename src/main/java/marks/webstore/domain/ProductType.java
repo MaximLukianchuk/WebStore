@@ -10,7 +10,6 @@ public class ProductType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String name;
 
     public ProductType() {
@@ -20,7 +19,7 @@ public class ProductType {
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
