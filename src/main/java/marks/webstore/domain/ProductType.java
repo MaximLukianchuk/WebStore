@@ -12,6 +12,8 @@ public class ProductType {
     private Integer id;
     private String name;
 
+    private String filename;
+
     public ProductType() {
     }
 
@@ -31,4 +33,11 @@ public class ProductType {
         this.name = name;
     }
 
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
 }
