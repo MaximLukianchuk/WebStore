@@ -2,6 +2,5 @@
 <#import "parts/login.ftl" as L>
 <@C.page>
 Add new user
-${message}
-<@L.login "/registartion" />
+<@L.login "/registration" />
 </@C.page>
