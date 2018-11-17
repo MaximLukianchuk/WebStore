@@ -24,3 +24,11 @@
     <button class="btn btn-primary" type="submit">Sign Out</button>
 </form>
 </#macro>
+
+<#macro login2>
+<form action="/login" method="post">
+    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    <#if !false><a href="/registration" class="mr-3" style="text-decoration: none">Add new user</a></#if>
+    <button class="btn btn-primary" type="submit"><#if false>Create<#else>Sign In</#if></button>
+</form>
+</#macro>
