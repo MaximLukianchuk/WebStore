@@ -1,3 +1,7 @@
 body {
     color: #113;
 }
+
+.none {
+    text-decoration: none;
+}
