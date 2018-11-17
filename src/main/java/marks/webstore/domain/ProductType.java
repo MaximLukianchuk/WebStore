@@ -10,8 +10,9 @@ public class ProductType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String name;
+
+    private String filename;
 
     public ProductType() {
     }
@@ -20,7 +21,7 @@ public class ProductType {
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -32,4 +33,11 @@ public class ProductType {
         this.name = name;
     }
 
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
 }
