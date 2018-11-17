@@ -1,10 +1,5 @@
 <#import "parts/common.ftl" as C>
-<#import "parts/login.ftl" as L>
 <@C.page>
-<div>
-    <@L.logout />
-    <span><a href="/user">User list</a></span>
-</div>
 <div>
     <form method="post" enctype="multipart/form-data">
         <input type="text" name="name" placeholder="наименование товара"/>
@@ -14,17 +9,17 @@
     </form>
 </div>
 <div>Список товаров</div>
-<#list producttypes as producttype>
-    <div>
-        <b>${producttype.id}</b>
-        <span>${producttype.name}</span>
-        <div>
+    <#list producttypes as producttype>
+    <div class="card my-3" style="width: 18rem;">
             <#if producttype.filename??>
-                <img src="/img/${producttype.filename}">
+                <img src="/img/${producttype.filename}" class="card-img-top">
             </#if>
+        <div class="card-footer text-muted">
+            ${producttype.name}
         </div>
+
     </div>
-<#else>
+    <#else>
 No Product Types
-</#list>
+    </#list>
 </@C.page>
