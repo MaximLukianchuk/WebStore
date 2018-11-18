@@ -1,13 +1,14 @@
 ![WebStore](http://www.imageup.ru/img158/3216191/web-store4x.png)
 
 Web service designed to buy goods among a variety of stores
-
+<p align="center">
 [![MIT Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MaximLukianchuk/WebStore/blob/master/LICENSE)
 
 [![Author](https://img.shields.io/badge/author-MaximLukianchuk-lightgrey.svg)](https://github.com/MaximLukianchuk)
 [![Author](https://img.shields.io/badge/author-MarkSmirnov13-lightgrey.svg)](https://github.com/MarkSmirnov13)
 
 [![Maven](https://img.shields.io/badge/maven-v4.0.0-blue.svg)](https://maven.apache.org/)
+</p)
 
 
 ## Built With
