@@ -1,3 +1,4 @@
+<#include "parts/security.ftl">
 <#import "parts/common.ftl" as C>
 <#include "parts/security.ftl">
 <@C.page>

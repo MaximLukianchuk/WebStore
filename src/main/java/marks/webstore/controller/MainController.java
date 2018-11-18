@@ -12,6 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -30,7 +32,9 @@ public class MainController {
 
     @GetMapping("/main")
     public String main(Map<String, Object> model) {
-        Iterable<ProductType> producttypes = productTypeRepo.findAll();
+        List<ProductType> productTypes = productTypeRepo.findAll();
+        Collections.reverse(productTypes);
+        Iterable<ProductType> producttypes = productTypes;
 
         model.put("producttypes", producttypes);
 
@@ -65,7 +69,9 @@ public class MainController {
             productTypeRepo.save(productType);
         }
 
-        Iterable<ProductType> producttypes = productTypeRepo.findAll();
+        List<ProductType> productTypes = productTypeRepo.findAll();
+        Collections.reverse(productTypes);
+        Iterable<ProductType> producttypes = productTypes;
 
         model.put("producttypes", producttypes);
         return "main";
