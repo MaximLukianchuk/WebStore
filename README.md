@@ -1,6 +1,6 @@
 ![WebStore](http://www.imageup.ru/img158/3216191/web-store4x.png)
 
-Web service designed to buy goods among a variety of stores
+Web service that is designed to simplify shopping from different stores at one time
 
 [![MIT Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MaximLukianchuk/WebStore/blob/master/LICENSE)
 
