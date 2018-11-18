@@ -2,10 +2,10 @@
 
 Web service that is designed to simplify shopping from different stores at one time
 
-[![MIT Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MaximLukianchuk/WebStore/blob/master/LICENSE)
-
 [![Author](https://img.shields.io/badge/author-MaximLukianchuk-lightgrey.svg)](https://github.com/MaximLukianchuk)
 [![Author](https://img.shields.io/badge/author-MarkSmirnov13-lightgrey.svg)](https://github.com/MarkSmirnov13)
+
+[![MIT Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MaximLukianchuk/WebStore/blob/master/LICENSE)
 
 [![Maven](https://img.shields.io/badge/maven-v4.0.0-blue.svg)](https://maven.apache.org/)
 
