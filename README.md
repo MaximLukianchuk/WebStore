@@ -2,7 +2,7 @@
 
 Web service designed to buy goods among a variety of stores
 
-[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://github.com/MaximLukianchuk/WebStore/blob/master/LICENSE)
+[![MIT Licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MaximLukianchuk/WebStore/blob/master/LICENSE)
 
 [![Author](https://img.shields.io/badge/author-MaximLukianchuk-lightgrey.svg)](https://github.com/MaximLukianchuk)
 [![Author](https://img.shields.io/badge/author-MarkSmirnov13-lightgrey.svg)](https://github.com/MarkSmirnov13)
