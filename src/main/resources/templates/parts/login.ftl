@@ -54,20 +54,83 @@
         </div>
     </#if>
     <div class="form-group row">
-        <label class="col-sm-2 col-form-label"> Password:  </label>
+        <label for="validationServer05" class="col-sm-2 col-form-label"> Username: </label>
         <div class="col-sm-6">
-            <input type="password" name="password" class="form-control" placeholder="Password" />
+            <input type="text" name="username" id="validationServer05" class="form-control" placeholder="Username" required/>
+            <#if isRegisterForm>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </#if>
+            <div class="invalid-feedback">
+                Please choose a username.
+            </div>
+
         </div>
     </div>
+    <div class="form-group row">
+        <label for="validationServer06" class="col-sm-2 col-form-label"> Password:  </label>
+        <div class="col-sm-6">
+            <input type="password" name="password" id="validationServer06" class="form-control" placeholder="Password" required/>
+            <#if isRegisterForm>
+                <small id="passwordHelpInline" class="text-muted">
+                    Must be 8-20 characters long.
+                </small>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </#if>
+            <div class="invalid-feedback">
+                Please enter a password.
+            </div>
+        </div>
+    </div>
+    <#if isRegisterForm>
+        <div class="form-group row col">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="invalidCheck3" required>
+                <label class="form-check-label" for="invalidCheck3">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div>
+    </#if>
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
-    <#if !isRegisterForm><a href="/registration">Add new user</a></#if>
+    <#if !isRegisterForm><a href="/registration" style="text-decoration: none">Add new user</a></#if>
     <button class="btn btn-primary" type="submit"><#if isRegisterForm>Create<#else>Sign In</#if></button>
 </form>
+
+<script type="text/javascript">
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            var form = document.getElementById('needs-validation');
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        }, false);
+    })();
+</script>
 </#macro>
 
 <#macro logout>
 <form action="/logout" method="post">
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
     <button class="btn btn-primary" type="submit">Sign Out</button>
+</form>
+</#macro>
+
+<#macro login2>
+<form action="/login" method="post">
+    <input type="hidden" name="_csrf" value="${_csrf.token}" />
+    <#if !false><a href="/registration" class="mr-3" style="text-decoration: none">Add new user</a></#if>
+    <button class="btn btn-primary" type="submit"><#if false>Create<#else>Sign In</#if></button>
 </form>
 </#macro>
