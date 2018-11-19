@@ -10,9 +10,10 @@ public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-
     private String name;
     private String address;
+
+    private String filename;
 
     public Store() {
     }
@@ -22,7 +23,7 @@ public class Store {
         this.address = address;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -42,4 +43,11 @@ public class Store {
         this.address = address;
     }
 
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
 }
