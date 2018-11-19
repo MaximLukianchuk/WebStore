@@ -1,4 +1,4 @@
-![WebStore](http://www.imageup.ru/img158/3216191/web-store4x.png)(htpps://mark-and-max.store)
+[![WebStore](http://www.imageup.ru/img158/3216191/web-store4x.png)](htpps://mark-and-max.store)
 
 Web service that is designed to simplify shopping from different stores at one time
 
