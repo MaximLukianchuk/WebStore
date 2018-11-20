@@ -25,11 +25,10 @@
         </div>
     </form>
 </div>
-
-<div class="row">
+<div class="row mt-2" style="background-color:#f9f9f9">
     <#list producttypes as producttype>
-        <div class="col-lg-3 col-md-6 mb-4 mt-2">
-            <div class="card h-100">
+        <div class="col-lg-2 col-md-6 mb-4 mt-3">
+            <div class="card-img-top">
             <#if producttype.filename??>
                 <img src="/img/${producttype.filename}" class="card-img-top">
             </#if>
