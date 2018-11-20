@@ -53,6 +53,12 @@
             </div>
         </div>
     </#if>
+    <#if info??>
+        <div class="alert alert-info alert-dismissible fade show mt-3" role="alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            ${info}
+        </div>
+    </#if>
     <div class="form-group row">
         <label for="validationServer05" class="col-sm-2 col-form-label"> Username: </label>
         <div class="col-sm-6">
@@ -65,17 +71,24 @@
             <div class="invalid-feedback">
                 Please choose a username.
             </div>
-
+            <#if messages??>
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Error!</strong> ${messages?if_exists}
+                </div>
+            </#if>
         </div>
     </div>
     <div class="form-group row">
         <label for="validationServer06" class="col-sm-2 col-form-label"> Password:  </label>
         <div class="col-sm-6">
-            <input type="password" name="password" id="validationServer06" class="form-control" placeholder="Password" required/>
+            <input type="password" name="password" id="validationServer06" required pattern="^[_a-zA-Z0-9\-]{8,20}$" class="form-control" placeholder="Password" required/>
             <#if isRegisterForm>
-                <small id="passwordHelpInline" class="text-muted">
-                    Must be 8-20 characters long.
-                </small>
+                <div id="pass">
+                    <small id="passwordHelpInline" class="text-muted">
+                        Must be 8-20 characters long.
+                    </small>
+                </div>
                 <div class="valid-feedback">
                     Looks good!
                 </div>
@@ -83,6 +96,12 @@
             <div class="invalid-feedback">
                 Please enter a password.
             </div>
+            <#if error??>
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Error!</strong> ${error}
+                </div>
+            </#if>
         </div>
     </div>
     <#if isRegisterForm>
@@ -101,13 +120,14 @@
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
     <#if !isRegisterForm><a href="/registration" style="text-decoration: none">Add new user</a></#if>
     <button class="btn btn-primary" type="submit"><#if isRegisterForm>Create<#else>Sign In</#if></button>
+    <div id="pas"></div>
 </form>
 
 <script type="text/javascript">
     (function () {
         'use strict';
         window.addEventListener('load', function () {
-            var form = document.getElementById('needs-validation');
+            let form = document.getElementById('needs-validation');
             form.addEventListener('submit', function (event) {
                 if (form.checkValidity() === false) {
                     event.preventDefault();

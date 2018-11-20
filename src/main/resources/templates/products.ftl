@@ -43,4 +43,5 @@
         No Product Types
     </#list>
 </div>
+
 </@C.page>
