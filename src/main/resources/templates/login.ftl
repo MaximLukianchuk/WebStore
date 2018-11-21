@@ -1,6 +1,7 @@
 <#import "parts/common.ftl" as C>
 <#import "parts/login.ftl" as L>
 <@C.page>
+<div class="container mt-5">
 <#if message??>
     <#if message == "Your account was successfully activated">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -16,4 +17,5 @@
     </#if>
 </#if>
 <@L.login "/login" false/>
+</div>
 </@C.page>

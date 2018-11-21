@@ -1,6 +1,6 @@
 <#import "parts/common.ftl" as C>
 <@C.page>
-
+<div class="container mt-5">
 <h2 class="mb-3">Store list</h2>
 <div>
     <form method="post" enctype="multipart/form-data">
@@ -40,5 +40,6 @@
     <#else>
         No Stores
     </#list>
+</div>
 </div>
 </@C.page>

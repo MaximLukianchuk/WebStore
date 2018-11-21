@@ -7,11 +7,7 @@ body {
     text-decoration: none;
 }
 
-.carousel-inner > .item > img, .carousel-inner > .item > a > img {
-    display: block;
-    height: 400px;
-    min-width: 100%;
-    width: 100%;
-    max-width: 100%;
-    line-height: 1;
+.container-fluid-wide {
+    padding-left: 0;
+    padding-right: 0;
 }
