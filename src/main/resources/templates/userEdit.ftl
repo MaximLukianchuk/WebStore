@@ -1,5 +1,6 @@
 <#import "parts/common.ftl" as C>
 <@C.page>
+<div class="container mt-5">
 <h2 class="mb-3">User editor</h2>
 
 <form action="/user" method="post">
@@ -42,5 +43,5 @@
                 });
     }
 </script>
-
+</div>
 </@C.page>
