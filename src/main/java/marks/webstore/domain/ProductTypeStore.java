@@ -1,7 +1,6 @@
 package marks.webstore.domain;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @Entity
 @Table(name = "ProductTypeStore")
