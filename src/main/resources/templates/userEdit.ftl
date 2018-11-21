@@ -13,6 +13,7 @@
     <input type="hidden" value="${user.id}" name = "userId">
     <input type="hidden" value="${_csrf.token}" name="_csrf">
     <button type="submit" class="btn btn-light mt-2" style="width: 120px">Save</button>
+    <button type="submit" class="btn btn-light mt-2" style="width: 120px"><a href="/user/${user.id}/delete" style="color: black; text-decoration: none; display: block">Delete</a></button>
 </form>
 
 </@C.page>

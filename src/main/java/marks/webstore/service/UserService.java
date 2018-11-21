@@ -22,6 +22,10 @@ public class UserService {
     @Autowired
     private MailSender mailSender;
 
+    public User findUserByUsername(User user) {
+        return userRepo.findByUsername(user.getUsername());
+    }
+
     public boolean addUser(User user) {
         User userFromDb = userRepo.findByUsername(user.getUsername());
 

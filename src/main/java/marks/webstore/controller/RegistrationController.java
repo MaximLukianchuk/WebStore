@@ -8,9 +8,7 @@ import marks.webstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.Map;
@@ -26,9 +24,10 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(User user, Map<String, Object> model) {
+    public String addUser(User user, Map<String, Object> model, Model models) {
         if (!userService.addUser(user)) {
             model.put("message", "User exists!");
+            models.addAttribute("messages", "This name is already taken!");
             return "registration";
         }
 
@@ -40,10 +39,21 @@ public class RegistrationController {
         boolean isActivated = userService.activateUser(code);
 
         if (isActivated) {
-            model.addAttribute("message", "User successfully activated");
+            model.addAttribute("message", "Your account was successfully activated");
         } else {
             model.addAttribute("message", "Activation code is not found!");
         }
+
+        return "login";
+    }
+
+    @GetMapping("/login")
+    public String login(Model model, String error, String logout) {
+        if (error != null)
+            model.addAttribute("error", "Your username or password is invalid.");
+
+        if (logout != null)
+            model.addAttribute("info", "You have been logged out successfully.");
 
         return "login";
     }
