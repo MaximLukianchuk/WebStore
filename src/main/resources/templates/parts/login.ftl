@@ -1,5 +1,11 @@
 <#macro login path isRegisterForm>
 <form action="${path}" method="post" id="needs-validation" novalidate>
+    <#if messages2??>
+    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Error!</strong> ${messages2} Try to <a href="/login" class="alert-link">log in</a>.
+    </div>
+    </#if>
     <#if isRegisterForm>
         <div class="form-group row">
             <label for="validationServer01" class="col-sm-2 col-form-label"> Name: </label>
@@ -74,7 +80,7 @@
             <#if messages??>
                 <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                    <strong>Error!</strong> ${messages?if_exists}
+                    <strong>Error!</strong> ${messages}
                 </div>
             </#if>
         </div>
@@ -148,9 +154,9 @@
 </#macro>
 
 <#macro login2>
-<form action="/login" method="post">
+<form method="post">
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
-    <#if !false><a href="/registration" class="mr-3" style="text-decoration: none">Add new user</a></#if>
-    <button class="btn btn-primary" type="submit"><#if false>Create<#else>Sign In</#if></button>
+    <a href="/registration" class="mr-3" style="text-decoration: none">Add new user</a>
+    <button class="btn btn-primary"><a href="/login" style="color: white; display: block; text-decoration: none;">Sign in</a></button>
 </form>
 </#macro>

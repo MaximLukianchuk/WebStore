@@ -25,6 +25,12 @@ public class RegistrationController {
 
     @PostMapping("/registration")
     public String addUser(User user, Map<String, Object> model, Model models) {
+        if (!userService.checkForEmail(user)) {
+            model.put("message2", "This email is already taken");
+            models.addAttribute("messages2", "This email is already taken!");
+            return "registration";
+        }
+
         if (!userService.addUser(user)) {
             model.put("message", "User exists!");
             models.addAttribute("messages", "This name is already taken!");
