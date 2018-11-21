@@ -10,19 +10,19 @@ Web service that is designed to simplify shopping from different stores at one t
 [![Author](https://img.shields.io/badge/author-MarkSmirnov13-lightgrey.svg)](https://github.com/MarkSmirnov13)
 
 ## Built With
-  * [Spring Boot](https://spring.io/projects/spring-boot) - Makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run"
-  * [Maven](https://maven.apache.org/) - Dependency Management
-  * [Postgresql](https://www.postgresql.org/) - The World's Most Advanced Open Source Relational Database
-  * [Freemarker](https://freemarker.apache.org/) - a Java library to generate text output (HTML web pages, e-mails, configuration files, source code, etc.)
+* [Spring Boot](https://spring.io/projects/spring-boot) - Makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run"
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [Postgresql](https://www.postgresql.org/) - The World's Most Advanced Open Source Relational Database
+* [Freemarker](https://freemarker.apache.org/) - a Java library to generate text output (HTML web pages, e-mails, configuration files, source code, etc.)
 
 ## Authors
-  * **Maksim Lukianchuk** - *Initial work*
-  * **Mark Smirnov** - *Initial work*
+* **Maksim Lukianchuk** - *Initial work*
+* **Mark Smirnov** - *Initial work*
 
 ## License
 MIT license
 
 ## Acknowledgments
-  * Hat tip to anyone whose code was used
-  * Inspiration
-  * etc
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
