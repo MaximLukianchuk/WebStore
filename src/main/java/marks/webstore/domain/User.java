@@ -27,6 +27,10 @@ public class User {
         return roles.contains(Role.ADMIN);
     }
 
+    public boolean isRedactor() {
+        return roles.contains(Role.REDACTOR);
+    }
+
     public Long getId() {
         return id;
     }
