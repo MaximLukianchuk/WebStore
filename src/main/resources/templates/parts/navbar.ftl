@@ -4,7 +4,7 @@
     <a class="navbar-brand" href="http://localhost:8080">
         <img src="../static/images/logoimg.png"
              width="235.566" height="60"
-             alt="Web Store">
+                alt="Web Store">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,6 +22,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="/stores">Stores</a>
             </li>
+            <#include "dropdown.ftl">
         </ul>
         <#if name = "unknown">
             <@L.login2 />
