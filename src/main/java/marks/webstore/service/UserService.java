@@ -50,6 +50,17 @@ public class UserService {
         return true;
     }
 
+    /**
+     * Function that checks if the email is already taken
+     * @param user Our new user
+     * @return true if email is free, false if the email is taken
+     */
+    public boolean checkForEmail(User user) {
+        User userFromDb = userRepo.findByEmail(user.getEmail());
+
+        return userFromDb == null;
+    }
+
     public boolean activateUser(String code) {
         User user = userRepo.findByActivationCode(code);
 
