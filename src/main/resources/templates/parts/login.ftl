@@ -61,7 +61,7 @@
     </#if>
     <#if info??>
         <div class="alert alert-info alert-dismissible fade show mt-3" role="alert">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <button type="button" class="close" data-turbolinks="false" data-dismiss="alert">&times;</button>
             ${info}
         </div>
     </#if>
