@@ -1,6 +1,5 @@
 <#import "parts/common.ftl" as C>
 <@C.page>
-    <#include "parts/sideNav.ftl">
 <div class="container mt-5">
     <h2 class="mb-3">Store list</h2>
     <div>

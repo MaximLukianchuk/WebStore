@@ -22,16 +22,24 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/", "/registration", "/static/**", "/activate/*", "/user/*/delete").permitAll()
-                    .anyRequest().authenticated()
+                .antMatchers(
+                        "/"
+                        , "/registration"
+                        , "/static/**"
+                        , "/activate/*"
+                        , "/products/**"
+                        , "/stores/**"
+                        , "/img/**")
+                .permitAll()
+                .anyRequest().authenticated()
                 .and()
-                    .formLogin()
-                    .loginPage("/login")
-                    .defaultSuccessUrl("/products", true)
-                    .permitAll()
+                .formLogin()
+                .loginPage("/login")
+                .defaultSuccessUrl("/products", true)
+                .permitAll()
                 .and()
-                    .logout()
-                    .permitAll();
+                .logout()
+                .permitAll();
     }
 
     @Override
