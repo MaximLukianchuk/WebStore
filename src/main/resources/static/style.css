@@ -1,6 +1,5 @@
 body {
     color: #113;
-    background-color: #f8f9fa;
 }
 
 .none {
@@ -62,4 +61,11 @@ footer {
 
 .footer p{
     margin-bottom: 0;
+}
+
+#logo {
+    width: 235px;
+    height: 60px;
+    background: url("../static/images/smallLogo.png");
+    background-size: cover;
 }
