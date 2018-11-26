@@ -25,22 +25,6 @@
             </div>
         </form>
     </div>
-    <#--<div class="row mt-2" style="background-color:#f9f9f9">-->
-    <#--<#list stores as store>-->
-        <#--<div class="col-lg-2 col-md-6 mb-4 mt-3">-->
-            <#--<div class="card-img-top">-->
-            <#--<#if store.filename??>-->
-                <#--<img src="/img/${store.filename}" class="card-img-top">-->
-            <#--</#if>-->
-                <#--${store.name}-->
-                <#--<hr>-->
-                <#--${store.address}-->
-            <#--</div>-->
-        <#--</div>-->
-    <#--<#else>-->
-        <#--No Stores-->
-    <#--</#list>-->
-    <#--</div>-->
 
     <div class="">
         <div class="row">

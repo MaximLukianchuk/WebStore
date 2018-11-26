@@ -29,7 +29,7 @@
     <div class="">
         <div class="row">
             <#list producttypes as producttype>
-                <div class="col-md-4 mt-4">
+                <div class="col-md-3 mt-4">
                     <div class="card text-center img">
                         <#if producttype.filename??>
                             <div class="wrapper">
@@ -54,10 +54,7 @@
                         <div class="card-footer text-muted" style="background-color: white">
                             <div class="row">
                                 <div class="col">
-                                    <a href=""><i class="fas fa-map"></i></a>
-                                </div>
-                                <div class="col">
-                                    <a href="#" class="seemore" style="text-decoration: none">Add to cart</a>
+                                    <a href="#" class="seemore" style="text-decoration: none; float: right;">Add to cart</a>
                                 </div>
                             </div>
                         </div>

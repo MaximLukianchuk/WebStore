@@ -137,7 +137,9 @@
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             <#if !isRegisterForm><a href="/registration" style="text-decoration: none">Add new user</a></#if>
             <button class="btn btn-primary" type="submit"><#if isRegisterForm>Create<#else>Sign In</#if></button>
-            <div id="pas"></div>
+            <#if !isRegisterForm>
+                <button class="btn btn-light" type="button"><a href="/products" style="text-decoration: none; display: block">Menu</a></button>
+            </#if>
         </form>
     </div>
 </div>
