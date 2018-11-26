@@ -49,4 +49,19 @@ public class ProductTypeStore {
         this.amount = amount;
     }
 
+    public ProductType getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductType product) {
+        this.product = product;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
 }

@@ -1,6 +1,6 @@
 <#include "security.ftl">
 <#import "login.ftl" as L>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: white">
     <a class="navbar-brand" href="http://localhost:8080">
         <div id="logo"></div>
     </a>
