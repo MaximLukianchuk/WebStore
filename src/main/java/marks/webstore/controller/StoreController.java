@@ -1,13 +1,15 @@
 package marks.webstore.controller;
 
+import marks.webstore.domain.ProductType;
+import marks.webstore.domain.ProductTypeStore;
 import marks.webstore.domain.Store;
+import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -18,14 +20,18 @@ import java.util.Map;
 import java.util.UUID;
 
 @Controller
+@RequestMapping("/stores")
 public class StoreController {
     @Autowired
     private StoreRepo storeRepo;
 
+    @Autowired
+    private ProductTypeStoreRepo productTypeStoreRepo;
+
     @Value("${upload.path}")
     private String uploadPath;
 
-    @GetMapping("/stores")
+    @GetMapping
     public String stores(Map<String, Object> model) {
         List<Store> storesbd = storeRepo.findAll();
         Collections.reverse(storesbd);
@@ -36,7 +42,7 @@ public class StoreController {
         return "stores";
     }
 
-    @PostMapping("/stores")
+    @PostMapping
     public String addStore(
             @RequestParam String name,
             @RequestParam String address,
@@ -71,5 +77,19 @@ public class StoreController {
 
         model.put("stores", stores);
         return "stores";
+    }
+
+    @GetMapping("{store}")
+    public String storeProductsList (@PathVariable("store") String storeID, Map<String, Object> models, Model model) {
+        Integer store_id = Integer.parseInt(storeID);
+
+        Store store = storeRepo.findById(store_id);
+
+        Iterable<ProductTypeStore> productTypeStores = productTypeStoreRepo.findAllByStoreId(store.getId());
+
+        model.addAttribute("storeName", store.getName());
+        models.put("productTypeStores", productTypeStores);
+
+        return "storeProducts";
     }
 }

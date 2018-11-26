@@ -2,6 +2,7 @@
 <@C.page>
 <div class="container mt-5">
     <h2 class="mb-3">Product list</h2>
+    ${addProductError?if_exists}
     <div>
         <form method="post" enctype="multipart/form-data">
             <div class="form-row">
@@ -11,6 +12,21 @@
                 <div class="col-md-4 mt-2">
                     <input type="text" class="form-control" name="price" placeholder="Product price" required/>
                 </div>
+                <div class="col-md-4 mt-2">
+                    <input type="text" class="form-control" name="amount" placeholder="Product amount" required/>
+                </div>
+                <div class="input-group col-md-4 mt-2">
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <#list stores as store>
+                            <option value="1">${store.name}</option>
+                        </#list>
+                    </select>
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Stores</label>
+                    </div>
+                </div>
+
                 <div class="col-md-4 mt-2">
                     <div class="custom-file">
                         <input type="file" name="file" class="custom-file-input" id="customFile"
@@ -29,7 +45,7 @@
     <div class="">
         <div class="row">
             <#list producttypes as producttype>
-                <div class="col-md-4 mt-4">
+                <div class="col-md-3 mt-4">
                     <div class="card text-center img">
                         <#if producttype.filename??>
                             <div class="wrapper">
@@ -54,10 +70,7 @@
                         <div class="card-footer text-muted" style="background-color: white">
                             <div class="row">
                                 <div class="col">
-                                    <a href=""><i class="fas fa-map"></i></a>
-                                </div>
-                                <div class="col">
-                                    <a href="#" class="seemore" style="text-decoration: none">Add to cart</a>
+                                    <a href="#" class="seemore" style="text-decoration: none; float: right;">Add to cart</a>
                                 </div>
                             </div>
                         </div>

@@ -1,9 +1,8 @@
 package marks.webstore.controller;
 
-import marks.webstore.domain.ProductType;
-import marks.webstore.domain.Role;
-import marks.webstore.domain.User;
+import marks.webstore.domain.*;
 import marks.webstore.repos.ProductTypeRepo;
+import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,11 +26,23 @@ public class ProductController {
     @Autowired
     private ProductTypeRepo productTypeRepo;
 
+    @Autowired
+    private StoreRepo storeRepo;
+
+    @Autowired
+    private ProductTypeStoreRepo productTypeStoreRepo;
+
     @Value("${upload.path}")
     private String uploadPath;
 
     @GetMapping("/products")
     public String products(Map<String, Object> model) {
+        List<Store> storesbd = storeRepo.findAll();
+        Collections.reverse(storesbd);
+        Iterable<Store> stores = storesbd;
+
+        model.put("stores", stores);
+
         List<ProductType> productTypes = productTypeRepo.findAll();
         Collections.reverse(productTypes);
         Iterable<ProductType> producttypes = productTypes;
@@ -45,8 +56,11 @@ public class ProductController {
     public String addProduct(
             @RequestParam String name,
             @RequestParam Float price,
+            @RequestParam Long amount,
             Map<String, Object> model,
-            @RequestParam("file") MultipartFile file
+            @RequestParam("file") MultipartFile file,
+            @RequestParam String storeName,
+            Model models
     ) throws IOException {
         if (productTypeRepo.findAll().stream().noneMatch(productType -> productType.getName().equals(name))) {
 
@@ -67,7 +81,18 @@ public class ProductController {
                 productType.setFilename(resultFilename);
             }
 
+
+            Store store = storeRepo.findByName(storeName);
+
+            if (store == null) {
+                models.addAttribute("addProductError", "Store does not exist!");
+                return "products";
+            }
+
+            ProductTypeStore productTypeStore = new ProductTypeStore(productType, store, amount);
+
             productTypeRepo.save(productType);
+            productTypeStoreRepo.save(productTypeStore);
         }
 
         List<ProductType> productTypes = productTypeRepo.findAll();
@@ -77,4 +102,6 @@ public class ProductController {
         model.put("producttypes", producttypes);
         return "products";
     }
+
+
 }

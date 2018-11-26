@@ -25,22 +25,6 @@
             </div>
         </form>
     </div>
-    <#--<div class="row mt-2" style="background-color:#f9f9f9">-->
-    <#--<#list stores as store>-->
-        <#--<div class="col-lg-2 col-md-6 mb-4 mt-3">-->
-            <#--<div class="card-img-top">-->
-            <#--<#if store.filename??>-->
-                <#--<img src="/img/${store.filename}" class="card-img-top">-->
-            <#--</#if>-->
-                <#--${store.name}-->
-                <#--<hr>-->
-                <#--${store.address}-->
-            <#--</div>-->
-        <#--</div>-->
-    <#--<#else>-->
-        <#--No Stores-->
-    <#--</#list>-->
-    <#--</div>-->
 
     <div class="">
         <div class="row">
@@ -56,11 +40,9 @@
                             <h5 class="card-title">${store.name}</h5>
                             <p>${store.address}</p>
                             <hr class="hr">
-                            <p>
-                                <a class="btn btn-primary see-prod" style="text-decoration: none;" data-toggle="collapse" href="" aria-expanded="false" aria-controls="collapseExample">
+                                <button type="submit" class="btn btn-primary see-prod"><a href="/stores/${store.id}" class="see-prod" style="text-decoration: none; display: block">
                                     See products
-                                </a>
-                            </p>
+                                </a></button>
                         </div>
                     </div>
                 </div>

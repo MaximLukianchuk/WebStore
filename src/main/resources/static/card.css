@@ -48,6 +48,9 @@ address{
     text-decoration: none;
 }
 
+.see-prod:hover a {
+    color: white;
+}
 .see-prod {
     color: white;
 }
