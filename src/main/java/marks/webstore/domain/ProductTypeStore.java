@@ -8,10 +8,9 @@ public class ProductTypeStore {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
-    private double price;
-    private int amount;
+    private Long amount;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "product_type_id")
@@ -24,28 +23,21 @@ public class ProductTypeStore {
     public ProductTypeStore() {
     }
 
-    public ProductTypeStore(double price, int amount) {
-        this.price = price;
+    public ProductTypeStore(ProductType product, Store store, Long amount) {
+        this.product = product;
+        this.store = store;
         this.amount = amount;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public int getAmount() {
+    public Long getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(Long amount) {
         this.amount = amount;
     }
 

@@ -40,11 +40,9 @@
                             <h5 class="card-title">${store.name}</h5>
                             <p>${store.address}</p>
                             <hr class="hr">
-                            <p>
-                                <a class="btn btn-primary see-prod" style="text-decoration: none;" data-toggle="collapse" href="" aria-expanded="false" aria-controls="collapseExample">
+                                <button type="submit" class="btn btn-primary see-prod"><a href="/stores/${store.id}" class="see-prod" style="text-decoration: none; display: block">
                                     See products
-                                </a>
-                            </p>
+                                </a></button>
                         </div>
                     </div>
                 </div>
