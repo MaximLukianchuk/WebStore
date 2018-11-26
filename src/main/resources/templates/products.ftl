@@ -25,22 +25,47 @@
             </div>
         </form>
     </div>
-    <div class="row mt-2" style="background-color:#f9f9f9">
-    <#list producttypes as producttype>
-        <div class="col-lg-2 col-md-6 mb-4 mt-3">
-            <div class="card-img-top">
-            <#if producttype.filename??>
-                <img src="/img/${producttype.filename}" class="card-img-top">
-            </#if>
-                <p>
-                    <br>${producttype.price} ₽
-                    <br>${producttype.name}
-                </p>
-            </div>
+
+    <div class="">
+        <div class="row">
+            <#list producttypes as producttype>
+                <div class="col-md-4 mt-4">
+                    <div class="card text-center img">
+                        <#if producttype.filename??>
+                            <div class="wrapper">
+                                <img class="card-img-top" src="/img/${producttype.filename}" alt="Card image cap">
+                            </div>
+                        </#if>
+                        <div class="card-body">
+                            <h5 class="card-title">${producttype.name}</h5>
+                            <p>${producttype.price} ₽</p>
+                            <hr class="hr">
+                            <p class="see-more">
+                                <a class="seemore" style="text-decoration: none; color: #167ffb" data-toggle="collapse" href="#collapse${producttype.id}" aria-expanded="false" aria-controls="collapseExample">
+                                    See more
+                                </a>
+                            </p>
+                            <div class="collapse" id="collapse${producttype.id}">
+                                <div class="card-body">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted" style="background-color: white">
+                            <div class="row">
+                                <div class="col">
+                                    <a href=""><i class="fas fa-map"></i></a>
+                                </div>
+                                <div class="col">
+                                    <a href="#" class="seemore" style="text-decoration: none">Add to cart</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </#list>
         </div>
-    <#else>
-        No Product Types
-    </#list>
     </div>
+
 </div>
 </@C.page>
