@@ -29,11 +29,13 @@
     <div class="">
         <div class="row">
             <#list producttypes as producttype>
-                <div class="col-md-4 mt-4">
+                <div class="col-md-3 mt-4">
                     <div class="card text-center img">
                         <#if producttype.filename??>
                             <div class="wrapper">
-                                <img class="card-img-top" src="/img/${producttype.filename}" alt="Card image cap">
+                                <a href="/products/${producttype.id}">
+                                    <img class="card-img-top" src="/img/${producttype.filename}" alt="Card image cap">
+                                </a>
                             </div>
                         </#if>
                         <div class="card-body">
@@ -41,7 +43,9 @@
                             <p>${producttype.price} ₽</p>
                             <hr class="hr">
                             <p class="see-more">
-                                <a class="seemore" style="text-decoration: none; color: #167ffb" data-toggle="collapse" href="#collapse${producttype.id}" aria-expanded="false" aria-controls="collapseExample">
+                                <a class="seemore" style="text-decoration: none; color: #167ffb" data-toggle="collapse"
+                                   href="#collapse${producttype.id}" aria-expanded="false"
+                                   aria-controls="collapseExample">
                                     See more
                                 </a>
                             </p>

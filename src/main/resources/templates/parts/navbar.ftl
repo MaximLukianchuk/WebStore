@@ -20,6 +20,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="/stores">Stores</a>
             </li>
+            <#if user??>
+            <li class="nav-item">
+                <a class="nav-link" href="/user/profile">Profile</a>
+            </li>
+            </#if>
             <#include "dropdown.ftl">
         </ul>
         <#if name = "unknown">
