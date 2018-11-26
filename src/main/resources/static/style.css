@@ -50,3 +50,10 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+#logo {
+    width: 235px;
+    height: 60px;
+    background: url("../static/images/smallLogo.png");
+    background-size: cover;
+}
