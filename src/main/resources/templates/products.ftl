@@ -2,6 +2,7 @@
 <@C.page>
 <div class="container mt-5">
     <h2 class="mb-3">Product list</h2>
+    ${noString?if_exists}
     ${addProductError?if_exists}
     <div>
         <form method="post" enctype="multipart/form-data">
@@ -16,10 +17,10 @@
                     <input type="text" class="form-control" name="amount" placeholder="Product amount" required/>
                 </div>
                 <div class="input-group col-md-4 mt-2">
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Choose...</option>
+                    <select class="custom-select" id="inputGroupSelect01" required>
+                        <option>Choose...</option>
                         <#list stores as store>
-                            <option value="1">${store.name}</option>
+                            <option value="${store.name}">${store.name}</option>
                         </#list>
                     </select>
                     <div class="input-group-prepend">

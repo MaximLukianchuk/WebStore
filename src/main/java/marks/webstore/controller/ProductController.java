@@ -58,8 +58,8 @@ public class ProductController {
             @RequestParam Float price,
             @RequestParam Long amount,
             Map<String, Object> model,
+            String storeName,
             @RequestParam("file") MultipartFile file,
-            @RequestParam String storeName,
             Model models
     ) throws IOException {
         if (productTypeRepo.findAll().stream().noneMatch(productType -> productType.getName().equals(name))) {
@@ -81,7 +81,6 @@ public class ProductController {
                 productType.setFilename(resultFilename);
             }
 
-
             Store store = storeRepo.findByName(storeName);
 
             if (store == null) {
@@ -102,6 +101,4 @@ public class ProductController {
         model.put("producttypes", producttypes);
         return "products";
     }
-
-
 }
