@@ -21,6 +21,9 @@ import java.util.UUID;
 
 @Controller
 public class MainController {
+    @Value("${upload.path}")
+    private String uploadPath;
+
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
         return "greeting";

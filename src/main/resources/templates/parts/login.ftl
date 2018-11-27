@@ -137,7 +137,9 @@
             <input type="hidden" name="_csrf" value="${_csrf.token}" />
             <#if !isRegisterForm><a href="/registration" style="text-decoration: none">Add new user</a></#if>
             <button class="btn btn-primary" type="submit"><#if isRegisterForm>Create<#else>Sign In</#if></button>
-            <div id="pas"></div>
+            <#if !isRegisterForm>
+                <button class="btn btn-light" type="button"><a href="/products" style="text-decoration: none; display: block">Menu</a></button>
+            </#if>
         </form>
     </div>
 </div>
@@ -169,7 +171,7 @@
 <#macro login2>
 <form method="post">
     <input type="hidden" name="_csrf" value="${_csrf.token}" />
-    <a href="/registration" class="mr-3" style="text-decoration: none">Sign up</a>
+    <a href="/registration" class="mr-3" style="text-decoration: none">Add new user</a>
     <button class="btn btn-primary"><a href="/login" style="color: white; display: block; text-decoration: none;">Sign in</a></button>
 </form>
 </#macro>
