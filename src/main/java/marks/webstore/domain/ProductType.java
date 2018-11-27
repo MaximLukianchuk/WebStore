@@ -10,7 +10,7 @@ public class ProductType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
     private String name;
     private Float price;
 
@@ -24,7 +24,7 @@ public class ProductType {
         this.price = price;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
