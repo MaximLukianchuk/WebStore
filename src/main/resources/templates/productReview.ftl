@@ -8,20 +8,28 @@
         <div class="col-sm">
             <h2 class="mb-3">${product.name}
                 <div class="small" style="margin-top: 10px">
-                    "Краткое описание продукта"
+                    <#if product.description??>
+                        ${product.description}
+                    <#else>
+                        No description.
+                    </#if>
                 </div>
             </h2>
         </div>
         <div class="col-sm">
             <div class="card" style="width: 20rem;">
                 <div class="card-body">
-                    <h5 class="card-title">${product.price} ₽</h5>
+                    <h5 class="card-title">${product.price} $</h5>
                     <hr>
-                    <h6 class="card-subtitle mb-2 text-muted">В наличии</h6>
-                    <h6 class="card-subtitle mb-2 text-muted">Курьер доставит завтра, бесплатно</h6>
+                    <i class="fa fa-check" style="font-size:24px"></i>
+                    Available
+                    <br>
+                    <i class="fa fa-car" style="font-size:24px"></i>
+                    Will be delivered tomorrow
                     <div class="container-fluid-wide">
                         <button class="btn btn-primary" type="submit" style="display: block; width: 320px;
-padding: 15px 0; margin: 0 -21px -21px;border-radius: 0 0 4px 4px;">Добавить в корзину</button>
+padding: 15px 0; margin: 0 -21px -21px;border-radius: 0 0 4px 4px;">Add to cart
+                        </button>
                     </div>
                 </div>
             </div>
