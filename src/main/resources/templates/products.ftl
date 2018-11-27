@@ -16,12 +16,13 @@
                     <input type="text" class="form-control" name="amount" placeholder="Product amount" required/>
                 </div>
                 <div class="input-group col-md-4 mt-2">
-                    <select class="custom-select" id="inputGroupSelect01">
-                        <option selected>Choose...</option>
+                    <form>
+                        <select class="custom-select" id="inputGroupSelect01" name="storeName" required>
                         <#list stores as store>
-                            <option value="1">${store.name}</option>
+                            <option value="${store.name}">${store.name}</option>
                         </#list>
-                    </select>
+                        </select>
+                    </form>
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Stores</label>
                     </div>
@@ -36,7 +37,8 @@
                 </div>
                 <div class="col-md-4 mt-2">
                     <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                    <button type="submit" class="btn btn-light" style="width: 120px">Add</button>
+                    <button type="submit" class="btn btn-light" style="width: 120px">Add
+                    </button>
                 </div>
             </div>
         </form>
@@ -46,7 +48,7 @@
         <div class="row">
             <#list producttypes as producttype>
                 <div class="col-md-3 mt-4">
-                    <div class="card text-center img">
+                    <div class="card chooseCard text-center img">
                         <#if producttype.filename??>
                             <div class="wrapper">
                                 <a href="/products/${producttype.id}">
@@ -74,7 +76,8 @@
                         <div class="card-footer text-muted" style="background-color: white">
                             <div class="row">
                                 <div class="col">
-                                    <a href="#" class="seemore" style="text-decoration: none; float: right;">Add to cart</a>
+                                    <a href="#" class="seemore" style="text-decoration: none; float: right;">Add to
+                                        cart</a>
                                 </div>
                             </div>
                         </div>
@@ -83,6 +86,5 @@
             </#list>
         </div>
     </div>
-
 </div>
 </@C.page>

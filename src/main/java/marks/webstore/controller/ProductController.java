@@ -37,17 +37,15 @@ public class ProductController {
 
     @GetMapping("/products")
     public String products(Map<String, Object> model) {
-        List<Store> storesbd = storeRepo.findAll();
-        Collections.reverse(storesbd);
-        Iterable<Store> stores = storesbd;
-
-        model.put("stores", stores);
-
         List<ProductType> productTypes = productTypeRepo.findAll();
         Collections.reverse(productTypes);
-        Iterable<ProductType> producttypes = productTypes;
 
-        model.put("producttypes", producttypes);
+        model.put("producttypes", productTypes);
+
+        List<Store> storesbd = storeRepo.findAll();
+        Collections.reverse(storesbd);
+
+        model.put("stores", storesbd);
 
         return "products";
     }
@@ -62,6 +60,10 @@ public class ProductController {
             @RequestParam String storeName,
             Model models
     ) throws IOException {
+        List<Store> storesbd = storeRepo.findAll();
+        Collections.reverse(storesbd);
+
+        model.put("stores", storesbd);
         if (productTypeRepo.findAll().stream().noneMatch(productType -> productType.getName().equals(name))) {
 
             ProductType productType = new ProductType(name, price);
@@ -85,7 +87,7 @@ public class ProductController {
             Store store = storeRepo.findByName(storeName);
 
             if (store == null) {
-                models.addAttribute("addProductError", "Store does not exist!");
+                models.addAttribute("addProductError", "Store " + storeName + " does not exist!");
                 return "products";
             }
 
