@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,6 +56,7 @@ public class ProductController {
             @RequestParam String name,
             @RequestParam Float price,
             @RequestParam Long amount,
+            @RequestParam String description,
             Map<String, Object> model,
             @RequestParam("file") MultipartFile file,
             @RequestParam String storeName,
@@ -66,7 +68,7 @@ public class ProductController {
         model.put("stores", storesbd);
         if (productTypeRepo.findAll().stream().noneMatch(productType -> productType.getName().equals(name))) {
 
-            ProductType productType = new ProductType(name, price);
+            ProductType productType = new ProductType(name, price, description);
 
             if (file != null && !file.getOriginalFilename().isEmpty()) {
                 File uploadDir = new File(uploadPath);
