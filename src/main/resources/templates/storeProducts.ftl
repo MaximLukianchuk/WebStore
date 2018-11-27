@@ -7,7 +7,7 @@
         <div class="row">
                 <#list productTypeStores as productTypeStore>
                     <div class="col-md-3 mt-4">
-                        <div class="card text-center img">
+                        <div class="card chooseCard text-center img">
                             <#if productTypeStore.product.filename??>
                                 <div class="wrapper">
                                     <img class="card-img-top" src="/img/${productTypeStore.product.filename}" alt="Card image cap">
