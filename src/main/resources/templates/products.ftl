@@ -2,7 +2,6 @@
 <@C.page>
 <div class="container mt-5">
     <h2 class="mb-3">Product list</h2>
-    ${noString?if_exists}
     ${addProductError?if_exists}
     <div>
         <form method="post" enctype="multipart/form-data">
@@ -17,12 +16,13 @@
                     <input type="text" class="form-control" name="amount" placeholder="Product amount" required/>
                 </div>
                 <div class="input-group col-md-4 mt-2">
-                    <select class="custom-select" id="inputGroupSelect01" required>
-                        <option>Choose...</option>
+                    <form>
+                        <select class="custom-select" id="inputGroupSelect01" name="storeName" required>
                         <#list stores as store>
                             <option value="${store.name}">${store.name}</option>
                         </#list>
-                    </select>
+                        </select>
+                    </form>
                     <div class="input-group-prepend">
                         <label class="input-group-text" for="inputGroupSelect01">Stores</label>
                     </div>
@@ -47,10 +47,12 @@
         <div class="row">
             <#list producttypes as producttype>
                 <div class="col-md-3 mt-4">
-                    <div class="card text-center img">
+                    <div class="card chooseCard text-center img">
                         <#if producttype.filename??>
                             <div class="wrapper">
-                                <img class="card-img-top" src="/img/${producttype.filename}" alt="Card image cap">
+                                <a href="/products/${producttype.id}">
+                                    <img class="card-img-top" src="/img/${producttype.filename}" alt="Card image cap">
+                                </a>
                             </div>
                         </#if>
                         <div class="card-body">
@@ -58,7 +60,9 @@
                             <p>${producttype.price} ₽</p>
                             <hr class="hr">
                             <p class="see-more">
-                                <a class="seemore" style="text-decoration: none; color: #167ffb" data-toggle="collapse" href="#collapse${producttype.id}" aria-expanded="false" aria-controls="collapseExample">
+                                <a class="seemore" style="text-decoration: none; color: #167ffb" data-toggle="collapse"
+                                   href="#collapse${producttype.id}" aria-expanded="false"
+                                   aria-controls="collapseExample">
                                     See more
                                 </a>
                             </p>

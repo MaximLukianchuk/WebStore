@@ -30,7 +30,7 @@
         <div class="row">
             <#list stores as store>
                 <div class="col-md-4 mt-4">
-                    <div class="card text-center img">
+                    <div class="card chooseCard text-center img">
                         <#if store.filename??>
                             <div class="wrapper">
                                 <img class="card-img-top" src="/img/${store.filename}" alt="Card image cap">

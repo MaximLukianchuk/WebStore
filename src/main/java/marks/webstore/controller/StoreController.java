@@ -35,9 +35,8 @@ public class StoreController {
     public String stores(Map<String, Object> model) {
         List<Store> storesbd = storeRepo.findAll();
         Collections.reverse(storesbd);
-        Iterable<Store> stores = storesbd;
 
-        model.put("stores", stores);
+        model.put("stores", storesbd);
 
         return "stores";
     }

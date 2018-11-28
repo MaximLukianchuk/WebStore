@@ -35,9 +35,15 @@ public class UserService {
 
         userRepo.save(user);
 
+        sendMessage(user);
+
+        return true;
+    }
+
+    private void sendMessage(User user) {
         if (!StringUtils.isEmpty(user.getEmail())) {
             String message = String.format(
-                            "Dear, %s! \n" + "\n" +
+                    "Dear, %s! \n" + "\n" +
                             "Welcome to WebStore. Please, visit the next link to confirm the registration: \n" +
                             "http://localhost:8080/activate/%s",
                     user.getUsername(),
@@ -46,12 +52,11 @@ public class UserService {
 
             mailSender.sendMessage(user.getEmail(), "Activation code", message);
         }
-
-        return true;
     }
 
     /**
      * Function that checks if the email is already taken
+     *
      * @param user Our new user
      * @return true if email is free, false if the email is taken
      */
@@ -98,5 +103,26 @@ public class UserService {
 
     public void deleteUser(User user) {
         userRepo.delete(user);
+    }
+
+    public void updateProfile(User user, String password, String email) {
+        String userEmail = user.getEmail();
+        boolean isEmailChanged = (email != null && !email.equals(userEmail)) ||
+                (userEmail != null && !userEmail.equals(email));
+        if (isEmailChanged) {
+            user.setEmail(email);
+            if (!StringUtils.isEmpty(email)) {
+                user.setActivationCode(UUID.randomUUID().toString());
+            }
+        }
+
+        if (!StringUtils.isEmpty(password)) {
+            user.setPassword(password);
+        }
+
+        userRepo.save(user);
+        if (isEmailChanged) {
+            sendMessage(user);
+        }
     }
 }
