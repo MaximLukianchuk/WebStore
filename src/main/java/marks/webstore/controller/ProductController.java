@@ -56,8 +56,8 @@ public class ProductController {
             @RequestParam Float price,
             @RequestParam Long amount,
             Map<String, Object> model,
-            String storeName,
             @RequestParam("file") MultipartFile file,
+            @RequestParam String storeName,
             Model models
     ) throws IOException {
         List<Store> storesbd = storeRepo.findAll();
@@ -82,6 +82,7 @@ public class ProductController {
 
                 productType.setFilename(resultFilename);
             }
+
 
             Store store = storeRepo.findByName(storeName);
 

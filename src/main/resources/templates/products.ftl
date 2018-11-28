@@ -18,6 +18,7 @@
                 <div class="input-group col-md-4 mt-2">
                     <form>
                         <select class="custom-select" id="inputGroupSelect01" name="storeName" required>
+                            <option>Choose...</option>
                         <#list stores as store>
                             <option value="${store.name}">${store.name}</option>
                         </#list>
