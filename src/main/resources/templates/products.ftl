@@ -13,6 +13,10 @@
                     <input type="text" class="form-control" name="price" placeholder="Product price" required/>
                 </div>
                 <div class="col-md-4 mt-2">
+                    <input type="text" class="form-control" name="description" placeholder="Product description"
+                           required/>
+                </div>
+                <div class="col-md-4 mt-2">
                     <input type="text" class="form-control" name="amount" placeholder="Product amount" required/>
                 </div>
                 <div class="input-group col-md-4 mt-2">
@@ -58,7 +62,7 @@
                         </#if>
                         <div class="card-body">
                             <h5 class="card-title">${producttype.name}</h5>
-                            <p>${producttype.price} ₽</p>
+                            <p>${producttype.price} $</p>
                             <hr class="hr">
                             <p class="see-more">
                                 <a class="seemore" style="text-decoration: none; color: #167ffb" data-toggle="collapse"
@@ -69,7 +73,11 @@
                             </p>
                             <div class="collapse" id="collapse${producttype.id}">
                                 <div class="card-body">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                                    <#if producttype.description??>
+                                        ${producttype.description}
+                                    <#else>
+                                        No description.
+                                    </#if>
                                 </div>
                             </div>
                         </div>
