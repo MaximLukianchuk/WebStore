@@ -32,7 +32,6 @@
     <div class="d-flex flex-row  mb-3">
         <div class="p-2"><h1>Daily deal!</h1></div>
         <div class="p-2"><h1 id="demo"></h1></div>
-        <div class="p-2"><p>until end<br>of deal</p></div>
     </div>
     <div class="">
         <div class="row">
@@ -48,9 +47,10 @@
                         </#if>
                         <div class="card-body">
                             <h5 class="card-title">${producttype.name}</h5>
-                            <p>
-                                <del style="color:red;text-decoration:line-through">${producttype.price} $</del>
-                                <br> <h5>${producttype.price * (100 - producttype.discount) / 100} $</h5>
+                            <p style="color:red;">
+                                <del style="text-decoration:line-through">${producttype.price} $</del>
+                            (-${producttype.discount}%)
+                            <br> <h5>${producttype.price * (100 - producttype.discount) / 100} $</h5>
                             </p>
                             <hr class="hr">
                             <p class="see-more">

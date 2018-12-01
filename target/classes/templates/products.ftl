@@ -62,7 +62,12 @@
                         </#if>
                         <div class="card-body">
                             <h5 class="card-title">${producttype.name}</h5>
+                            <#if producttype.discount??>
+                                <del style="color:red;text-decoration:line-through">${producttype.price} $</del>
+                                <br> <h5>${producttype.price * (100 - producttype.discount) / 100} $</h5>
+                                <#else>
                             <p>${producttype.price} $</p>
+                            </#if>
                             <hr class="hr">
                             <p class="see-more">
                                 <a class="seemore" style="text-decoration: none; color: #167ffb" data-toggle="collapse"
