@@ -6,6 +6,7 @@ import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +20,6 @@ import java.util.Map;
 import java.util.UUID;
 
 @Controller
-@RequestMapping("/stores")
 public class StoreController {
     @Autowired
     private StoreRepo storeRepo;
@@ -30,7 +30,7 @@ public class StoreController {
     @Value("${upload.path}")
     private String uploadPath;
 
-    @GetMapping
+    @GetMapping("/stores")
     public String stores(Map<String, Object> model) {
         List<Store> storesbd = storeRepo.findAll();
         Collections.reverse(storesbd);
@@ -40,7 +40,30 @@ public class StoreController {
         return "stores";
     }
 
-    @PostMapping
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @GetMapping("/storesList")
+    public String storesList(Map<String, Object> model) {
+        List<Store> storesbd = storeRepo.findAll();
+        Collections.reverse(storesbd);
+
+        model.put("stores", storesbd);
+
+        return "redactorStoreList";
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @GetMapping("/addStore")
+    public String storesAdd(Map<String, Object> model) {
+        List<Store> storesbd = storeRepo.findAll();
+        Collections.reverse(storesbd);
+
+        model.put("stores", storesbd);
+
+        return "redactorStoreAdd";
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @PostMapping("(/addStore")
     public String addStore(
             @RequestParam String name,
             @RequestParam String address,
@@ -77,13 +100,15 @@ public class StoreController {
         return "stores";
     }
 
-    @GetMapping("{store}")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @GetMapping("/stores/{store}")
     public String storeProductsList (@PathVariable("store") String storeID, Map<String, Object> models, Model model) {
         Integer store_id = Integer.parseInt(storeID);
 
         Store store = storeRepo.findById(store_id);
 
-        Iterable<ProductTypeStore> productTypeStores = productTypeStoreRepo.findAllByStoreId(store.getId());
+        List<ProductTypeStore> productTypeStores = productTypeStoreRepo.findAllByStoreId(store.getId());
+        Collections.reverse(productTypeStores);
 
         model.addAttribute("storeName", store.getName());
         models.put("productTypeStores", productTypeStores);

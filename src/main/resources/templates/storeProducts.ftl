@@ -10,8 +10,9 @@
                         <div class="card chooseCard text-center img">
                             <#if productTypeStore.product.filename??>
                                 <div class="wrapper">
-                                    <img class="card-img-top" src="/img/${productTypeStore.product.filename}"
-                                         alt="Card image cap">
+                                    <a href="/products/${productTypeStore.product.id}">
+                                        <img class="card-img-top" src="/img/${productTypeStore.product.filename}" alt="Card image cap">
+                                    </a>
                                 </div>
                             </#if>
                             <div class="card-body">
