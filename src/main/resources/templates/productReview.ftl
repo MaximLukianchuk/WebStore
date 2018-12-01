@@ -19,7 +19,12 @@
         <div class="col-sm">
             <div class="card" style="width: 20rem;">
                 <div class="card-body">
-                    <h5 class="card-title">${product.price} $</h5>
+                    <h5 class="card-title"><#if product.discount??>
+                        <del style="color:red;text-decoration:line-through">${product.price} $</del>
+                        <br> <h5>${product.price * (100 - product.discount) / 100} $</h5>
+                    <#else>
+                            <p>${product.price} $</p>
+                    </#if></h5>
                     <hr>
                     <i class="fa fa-check" style="font-size:24px"></i>
                     Available

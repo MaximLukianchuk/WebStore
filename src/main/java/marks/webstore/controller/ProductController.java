@@ -60,6 +60,7 @@ public class ProductController {
             Map<String, Object> model,
             @RequestParam("file") MultipartFile file,
             @RequestParam String storeName,
+            Integer discount,
             Model models
     ) throws IOException {
         List<Store> storesbd = storeRepo.findAll();
@@ -68,7 +69,7 @@ public class ProductController {
         model.put("stores", storesbd);
         if (productTypeRepo.findAll().stream().noneMatch(productType -> productType.getName().equals(name))) {
 
-            ProductType productType = new ProductType(name, price, description);
+            ProductType productType = new ProductType(name, price, description, discount);
 
             if (file != null && !file.getOriginalFilename().isEmpty()) {
                 File uploadDir = new File(uploadPath);
