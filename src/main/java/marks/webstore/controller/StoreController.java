@@ -1,6 +1,5 @@
 package marks.webstore.controller;
 
-import marks.webstore.domain.ProductType;
 import marks.webstore.domain.ProductTypeStore;
 import marks.webstore.domain.Store;
 import marks.webstore.repos.ProductTypeStoreRepo;

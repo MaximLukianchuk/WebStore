@@ -1,6 +1,5 @@
 body {
     color: #113;
-    background-color: #f3f3f3;
 }
 
 .none {
@@ -48,13 +47,12 @@ body {
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
 
-    .sidenav a {
-        font-size: 18px;
-    }
+.container {
+    padding-bottom: 200px;
 }
 
 footer {

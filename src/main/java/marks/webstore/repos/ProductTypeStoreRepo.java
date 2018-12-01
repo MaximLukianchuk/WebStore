@@ -1,6 +1,5 @@
 package marks.webstore.repos;
 
-import marks.webstore.domain.ProductType;
 import marks.webstore.domain.ProductTypeStore;
 import org.springframework.data.repository.CrudRepository;
 

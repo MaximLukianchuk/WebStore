@@ -1,6 +1,8 @@
 package marks.webstore.controller;
 
-import marks.webstore.domain.*;
+import marks.webstore.domain.ProductType;
+import marks.webstore.domain.ProductTypeStore;
+import marks.webstore.domain.Store;
 import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
@@ -9,9 +11,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -68,6 +68,7 @@ public class ProductController {
             Map<String, Object> model,
             @RequestParam("file") MultipartFile file,
             @RequestParam String storeName,
+            Integer discount,
             Model models
     ) throws IOException {
         List<Store> storesbd = storeRepo.findAll();
@@ -76,7 +77,7 @@ public class ProductController {
         model.put("stores", storesbd);
         if (productTypeRepo.findAll().stream().noneMatch(productType -> productType.getName().equals(name))) {
 
-            ProductType productType = new ProductType(name, price, description);
+            ProductType productType = new ProductType(name, price, description, discount);
 
             if (file != null && !file.getOriginalFilename().isEmpty()) {
                 File uploadDir = new File(uploadPath);

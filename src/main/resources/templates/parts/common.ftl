@@ -15,10 +15,36 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/card.css">
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            height: 100%;
+            min-width: 900px;
+            background-color: white;
+        }
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        #footer {
+            height: 100px;
+            background: #f3f3f3;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 40px 0 0 0;
+        }
+    </style>
     <link rel="stylesheet" href="/static/productList.css">
 
 </head>
-<body class="light sidebar-mini sidebar-collapse">
+<body>
 <div>
         <#include "navbar.ftl">
 
@@ -43,8 +69,8 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
-<div class="footer" id="footer">
-    <footer class="footer text-center ">
+<div id="footer" class="text-center">
+    <footer class="footer text-center">
         <p>Made by Mark-and-Max</p>
     </footer>
 </div>

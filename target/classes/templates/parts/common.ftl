@@ -12,19 +12,41 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/card.css">
-    <link rel="stylesheet" href="/static/productList.css">
 
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            height: 100%;
+            min-width: 900px;
+            background-color: white;
+        }
+
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        #footer {
+            height: 100px;
+            background: #f3f3f3;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 40px 0 0 0;
+        }
+    </style>
 </head>
-<body class="light sidebar-mini sidebar-collapse">
+<body>
 <div>
-        <#include "navbar.ftl">
+    <#include "navbar.ftl">
 
-        <#nested>
+    <#nested>
 </div>
-
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
 <script type="text/javascript"
@@ -43,8 +65,8 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
-<div class="footer" id="footer">
-    <footer class="footer text-center ">
+<div id="footer" class="text-center">
+    <footer class="footer text-center">
         <p>Made by Mark-and-Max</p>
     </footer>
 </div>

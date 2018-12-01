@@ -107,10 +107,14 @@ public class UserService {
 
     public void updateProfile(User user, String password, String email) {
         String userEmail = user.getEmail();
+        System.out.println(user.getId());
+
         boolean isEmailChanged = (email != null && !email.equals(userEmail)) ||
                 (userEmail != null && !userEmail.equals(email));
+
         if (isEmailChanged) {
             user.setEmail(email);
+
             if (!StringUtils.isEmpty(email)) {
                 user.setActivationCode(UUID.randomUUID().toString());
             }
@@ -120,7 +124,9 @@ public class UserService {
             user.setPassword(password);
         }
 
+
         userRepo.save(user);
+
         if (isEmailChanged) {
             sendMessage(user);
         }
