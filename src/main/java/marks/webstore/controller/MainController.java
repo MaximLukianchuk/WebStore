@@ -22,9 +22,6 @@ public class MainController {
     @Autowired
     private StoreRepo storeRepo;
 
-    @Value("${upload.path}")
-    private String uploadPath;
-
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
         List<ProductType> productTypes = productTypeRepo.findAll();
