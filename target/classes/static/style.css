@@ -51,16 +51,8 @@ body {
     .sidenav a {font-size: 18px;}
 }
 
-
-footer {
-    margin-top: 100px;
-    color: #7c7c7d;
-    background: white;
-    padding: 25px;
-}
-
-.footer p{
-    margin-bottom: 0;
+.container {
+    padding-bottom: 200px;
 }
 
 #logo {

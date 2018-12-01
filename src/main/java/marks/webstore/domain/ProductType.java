@@ -14,16 +14,18 @@ public class ProductType {
     private String name;
     private Float price;
     private String description;
+    private Integer discount;
 
     private String filename;
 
     public ProductType() {
     }
 
-    public ProductType(String name, Float price, String description) {
+    public ProductType(String name, Float price, String description, Integer discount) {
         this.name = name;
         this.price = price;
         this.description = description;
+        this.discount = discount;
     }
 
     public Long getId() {
@@ -60,5 +62,13 @@ public class ProductType {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Integer getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(Integer discount) {
+        this.discount = discount;
     }
 }
