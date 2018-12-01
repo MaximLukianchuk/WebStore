@@ -6,6 +6,7 @@ import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -43,15 +44,22 @@ public class ProductController {
 
         model.put("producttypes", productTypes);
 
-        List<Store> storesbd = storeRepo.findAll();
-        Collections.reverse(storesbd);
-
-        model.put("stores", storesbd);
-
         return "products";
     }
 
-    @PostMapping("/products")
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @GetMapping("/productsList")
+    public String productsList(Map<String, Object> model) {
+        List<ProductType> productTypes = productTypeRepo.findAll();
+        Collections.reverse(productTypes);
+
+        model.put("producttypes", productTypes);
+
+        return "redactorProductList";
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @PostMapping("/addProduct")
     public String addProduct(
             @RequestParam String name,
             @RequestParam Float price,
@@ -104,6 +112,17 @@ public class ProductController {
         Iterable<ProductType> producttypes = productTypes;
 
         model.put("producttypes", producttypes);
-        return "products";
+        return "redactorStoreList";
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @GetMapping("/addProduct")
+    public String addProducts (Map<String, Object> model) {
+        List<Store> storesbd = storeRepo.findAll();
+        Collections.reverse(storesbd);
+
+        model.put("stores", storesbd);
+
+        return "redactorProductAdd";
     }
 }

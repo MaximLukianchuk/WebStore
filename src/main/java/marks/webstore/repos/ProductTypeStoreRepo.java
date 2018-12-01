@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface ProductTypeStoreRepo extends CrudRepository<ProductTypeStore, Long> {
     List<ProductTypeStore> findAllByStoreId(Integer storeId);
+    List<ProductTypeStore> findAll();
 }

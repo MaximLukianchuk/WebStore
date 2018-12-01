@@ -18,8 +18,8 @@
     <td>${user.email}</td>
     <td><#list user.roles as role>${role}<#sep>, </#list></td>
     <td>
-        <button type="submit" class="btn btn-light" style="width: 125px"><a href="/user/${user.id}"
-                                                                            style="color: black; text-decoration: none; display: block">Edit</a>
+        <button type="submit" class="btn btn-primary btn-sm" style="width: 125px"><a href="/user/${user.id}"
+                                                                            style="color: white; text-decoration: none; display: block">Edit</a>
         </button>
     </td>
 </tr>

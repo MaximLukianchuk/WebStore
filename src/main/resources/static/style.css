@@ -1,5 +1,6 @@
 body {
     color: #113;
+    background-color: #f3f3f3;
 }
 
 .none {
@@ -47,10 +48,14 @@ body {
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
+    .sidenav {
+        padding-top: 15px;
+    }
 
+    .sidenav a {
+        font-size: 18px;
+    }
+}
 
 footer {
     margin-top: 100px;
@@ -59,7 +64,7 @@ footer {
     padding: 25px;
 }
 
-.footer p{
+.footer p {
     margin-bottom: 0;
 }
 
