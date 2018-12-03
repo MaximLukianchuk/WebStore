@@ -13,12 +13,35 @@
     </#list>
     <input type="hidden" value="${user.id}" name = "userId">
     <input type="hidden" value="${_csrf.token}" name="_csrf">
-    <button type="submit" class="btn btn-light mt-2" style="width: 120px">Save</button>
-    <button type="submit" onclick="deleteOrNot();" class="btn btn-light mt-2" style="width: 120px">
-        <a href="/user/${user.id}/delete" style="color: black; text-decoration: none; display: block">Delete</a>
+    <button type="submit" class="btn btn-primary btn-sm mt-2" style="width: 120px">Save</button>
+    <button type="submit" onclick="deleteOrNot();" class="btn btn-primary btn-sm mt-2" style="width: 120px">
+        <a href="#" style="color: white; text-decoration: none; display: block">Delete</a>
     </button>
 </form>
 
+<script type="text/javascript">
+    function deleteOrNot() {
+        swal({
+            title: "Are you sure?",
+            text: "Once you delete ${user.username}, you will not be able to recover it.",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! User ${user.username} has been deleted!", {
+                        icon: "success",
+                    }).then((ok) => {
+                        if (ok) {
+                            window.location.href = "/user/${user.id}/delete";
+                        }
+                    });
+                } else {
+                    window.location.href = "/user/${user.id}";
+                }
+            });
+    }
+</script>
 
 </div>
 </@C.page>

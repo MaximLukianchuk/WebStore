@@ -5,8 +5,10 @@
          Admin Panel
      </a>
      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-         <a class="dropdown-item" href="#">Update products</a>
-         <a class="dropdown-item" href="#">Update stores</a>
+         <a class="dropdown-item" href="/productsList">List of products</a>
+         <a class="dropdown-item" href="/storesList">List of stores</a>
+         <a class="dropdown-item" href="/addProduct">Add product</a>
+         <a class="dropdown-item" href="/addStore">Add store</a>
          <#if isAdmin>
          <div class="dropdown-divider"></div>
          <a class="dropdown-item" href="/user">User list</a>
