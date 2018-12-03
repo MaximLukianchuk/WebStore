@@ -4,6 +4,9 @@ import marks.webstore.domain.Role;
 import marks.webstore.domain.User;
 import marks.webstore.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
@@ -11,7 +14,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public class UserService {
+public class UserService implements UserDetailsService {
     @Autowired
     private UserRepo userRepo;
 
@@ -105,9 +108,14 @@ public class UserService {
         userRepo.delete(user);
     }
 
-    public void updateProfile(User user, String password, String email) {
+    public void updateProfile(User user,
+                              String username,
+                              String password,
+                              String name,
+                              String surname,
+                              String city,
+                              String email) {
         String userEmail = user.getEmail();
-        System.out.println(user.getId());
 
         boolean isEmailChanged = (email != null && !email.equals(userEmail)) ||
                 (userEmail != null && !userEmail.equals(email));
@@ -124,11 +132,31 @@ public class UserService {
             user.setPassword(password);
         }
 
+        if (!StringUtils.isEmpty(username)) {
+            user.setUsername(username);
+        }
+
+        if (!StringUtils.isEmpty(name)) {
+            user.setName(name);
+        }
+
+        if (!StringUtils.isEmpty(surname)) {
+            user.setSurname(surname);
+        }
+
+        if (!StringUtils.isEmpty(city)) {
+            user.setCity(city);
+        }
 
         userRepo.save(user);
 
         if (isEmailChanged) {
             sendMessage(user);
         }
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return userRepo.findByUsername(username);
     }
 }
