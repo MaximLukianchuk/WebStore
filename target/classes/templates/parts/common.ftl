@@ -12,6 +12,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
     <link rel="stylesheet" href="/static/card.css">
 
@@ -33,20 +34,23 @@
 
         #footer {
             height: 100px;
-            background: #f3f3f3;
+            background: #ffffff;
             position: absolute;
             bottom: 0;
             width: 100%;
             padding: 40px 0 0 0;
         }
     </style>
+    <link rel="stylesheet" href="/static/productList.css">
+
 </head>
 <body>
 <div>
-    <#include "navbar.ftl">
+        <#include "navbar.ftl">
 
-    <#nested>
+        <#nested>
 </div>
+
 
 <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
 <script type="text/javascript"

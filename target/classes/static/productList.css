@@ -16,9 +16,9 @@ table {
     border-radius: 0;
 }
 
-.td-c td{
-    vertical-align: middle;
-}
+/*.td-c td{*/
+    /*vertical-align: middle;*/
+/*}*/
 
 .row1 {
     line-height: 150px;
