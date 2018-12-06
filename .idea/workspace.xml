@@ -4,30 +4,11 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/marks/webstore/controller/UserController.java" line="75" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad5d4b2c-6509-4175-92c3-dc45a9b6c576" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ad5d4b2c-6509-4175-92c3-dc45a9b6c576" name="Default Changelist" comment="add profile (need notifications and field checkers)&#10;&#10;# Conflicts:&#10;#&#9;target/classes/marks/webstore/controller/MainController.class&#10;#&#9;target/classes/marks/webstore/controller/StoreController.class&#10;#&#9;target/classes/marks/webstore/controller/UserController.class&#10;#&#9;target/classes/marks/webstore/domain/Store.class&#10;#&#9;target/classes/marks/webstore/repos/ProductTypeStoreRepo.class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marks/webstore/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marks/webstore/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marks/webstore/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/marks/webstore/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/discount.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/discount.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/config/WebSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/config/WebSecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/controller/StoreController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/controller/StoreController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/repos/ProductTypeStoreRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/repos/ProductTypeStoreRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/productList.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/productList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/common.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/parts/common.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/sideNav.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/products.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/products.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/domain/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/service/UserService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -175,14 +156,14 @@
     <session id="1744805490">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="34" />
+          <entry key="project.closed" value="37" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.15" value="2" />
           <entry key="project.open.time.16" value="5" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="2" />
-          <entry key="project.open.time.19" value="2" />
+          <entry key="project.open.time.19" value="3" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="1" />
@@ -195,7 +176,7 @@
           <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="4" />
-          <entry key="project.opened" value="35" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -209,7 +190,7 @@
           <entry key="mustache" value="460" />
           <entry key="properties" value="320" />
           <entry key="sql" value="252" />
-          <entry key="txt" value="785" />
+          <entry key="txt" value="844" />
           <entry key="xml" value="14" />
         </counts>
       </usages-collector>
@@ -220,7 +201,7 @@
           <entry key="Handlebars/Mustache" value="460" />
           <entry key="JAVA" value="6037" />
           <entry key="Markdown" value="21" />
-          <entry key="PLAIN_TEXT" value="789" />
+          <entry key="PLAIN_TEXT" value="848" />
           <entry key="Properties" value="320" />
           <entry key="SQL" value="49" />
           <entry key="Scratch" value="454" />
@@ -291,8 +272,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+            <state relative-caret-position="510">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -309,8 +290,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="255">
+              <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -318,7 +299,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
+            <state relative-caret-position="2210">
               <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
             </state>
           </provider>
@@ -327,7 +308,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/config/MvcConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
+            <state relative-caret-position="119">
               <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
             </state>
           </provider>
@@ -336,7 +317,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/controller/RegistrationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-306">
+            <state relative-caret-position="102">
               <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
             </state>
           </provider>
@@ -345,7 +326,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/service/MailSender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
+            <state relative-caret-position="85">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
             </state>
           </provider>
@@ -363,8 +344,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+            <state relative-caret-position="952">
+              <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -550,8 +531,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -841,7 +822,9 @@
       <workItem from="1543651426705" duration="18625000" />
       <workItem from="1543850352451" duration="2728000" />
       <workItem from="1543868913570" duration="1078000" />
-      <workItem from="1543871461737" duration="6201000" />
+      <workItem from="1543871461737" duration="6901000" />
+      <workItem from="1543931313977" duration="1224000" />
+      <workItem from="1544126335257" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1541594929774</created>
@@ -1123,17 +1106,23 @@
       <option name="project" value="LOCAL" />
       <updated>1543854354787</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="add profile (need notifications and field checkers)&#10;&#10;# Conflicts:&#10;#&#9;target/classes/marks/webstore/controller/MainController.class&#10;#&#9;target/classes/marks/webstore/controller/StoreController.class&#10;#&#9;target/classes/marks/webstore/controller/UserController.class&#10;#&#9;target/classes/marks/webstore/domain/Store.class&#10;#&#9;target/classes/marks/webstore/repos/ProductTypeStoreRepo.class">
+      <created>1543879025493</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1543879025493</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226646000" />
+    <option name="totallyTimeSpent" value="229169000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3986577" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.41073826" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1144,7 +1133,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32885906" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" visible="true" weight="0.3409396" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.3409396" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1245,7 +1234,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="many to one" />
     <MESSAGE value="no more mustache(&#10;freeMaker wlcm" />
     <MESSAGE value="admin panel" />
     <MESSAGE value="images/static" />
@@ -1270,7 +1258,8 @@
     <MESSAGE value="some adds&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/marks/webstore/controller/MainController.java&#10;#&#9;src/main/java/marks/webstore/controller/ProductController.java&#10;#&#9;src/main/java/marks/webstore/controller/UserController.java&#10;#&#9;src/main/resources/templates/parts/login.ftl" />
     <MESSAGE value="-unused code&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/marks/webstore/controller/MainController.java&#10;#&#9;src/main/java/marks/webstore/controller/ProductController.java&#10;#&#9;src/main/java/marks/webstore/controller/UserController.java&#10;#&#9;src/main/resources/templates/parts/login.ftl" />
     <MESSAGE value="fixed footer&#10;&#10;# Conflicts:&#10;#&#9;target/classes/marks/webstore/controller/MainController.class&#10;#&#9;target/classes/marks/webstore/controller/StoreController.class&#10;#&#9;target/classes/marks/webstore/controller/UserController.class&#10;#&#9;target/classes/marks/webstore/domain/Store.class&#10;#&#9;target/classes/marks/webstore/repos/ProductTypeStoreRepo.class" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed footer&#10;&#10;# Conflicts:&#10;#&#9;target/classes/marks/webstore/controller/MainController.class&#10;#&#9;target/classes/marks/webstore/controller/StoreController.class&#10;#&#9;target/classes/marks/webstore/controller/UserController.class&#10;#&#9;target/classes/marks/webstore/domain/Store.class&#10;#&#9;target/classes/marks/webstore/repos/ProductTypeStoreRepo.class" />
+    <MESSAGE value="add profile (need notifications and field checkers)&#10;&#10;# Conflicts:&#10;#&#9;target/classes/marks/webstore/controller/MainController.class&#10;#&#9;target/classes/marks/webstore/controller/StoreController.class&#10;#&#9;target/classes/marks/webstore/controller/UserController.class&#10;#&#9;target/classes/marks/webstore/domain/Store.class&#10;#&#9;target/classes/marks/webstore/repos/ProductTypeStoreRepo.class" />
+    <option name="LAST_COMMIT_MESSAGE" value="add profile (need notifications and field checkers)&#10;&#10;# Conflicts:&#10;#&#9;target/classes/marks/webstore/controller/MainController.class&#10;#&#9;target/classes/marks/webstore/controller/StoreController.class&#10;#&#9;target/classes/marks/webstore/controller/UserController.class&#10;#&#9;target/classes/marks/webstore/domain/Store.class&#10;#&#9;target/classes/marks/webstore/repos/ProductTypeStoreRepo.class" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1405,9 +1394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1429,9 +1415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1508,18 +1491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
           <caret line="74" column="23" lean-forward="true" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
-          <folding>
-            <element signature="e#1243#1244#0" expanded="true" />
-            <element signature="e#1271#1272#0" expanded="true" />
-            <element signature="e#1328#1329#0" expanded="true" />
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1418#1419#0" expanded="true" />
-            <element signature="e#1446#1447#0" expanded="true" />
-            <element signature="e#1494#1495#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
-            <element signature="e#1694#1695#0" expanded="true" />
-            <element signature="e#1721#1722#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1540,23 +1511,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d6f2aafe-75d4-4aff-93dc-8f89f3cde775/database/webStore/schema/public/table/usr">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2210">
+          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/config/MvcConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
+        <state relative-caret-position="119">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/controller/RegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
+        <state relative-caret-position="102">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/service/MailSender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
+        <state relative-caret-position="85">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
@@ -1568,6 +1560,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/domain/Batch.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1575,41 +1577,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="147" column="25" selection-start-line="147" selection-start-column="25" selection-end-line="147" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/profile.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="30" column="14" lean-forward="true" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://d6f2aafe-75d4-4aff-93dc-8f89f3cde775/database/webStore/schema/public/table/usr">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="255">
+          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
         </state>
       </provider>
     </entry>
