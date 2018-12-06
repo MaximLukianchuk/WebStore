@@ -34,7 +34,7 @@
 
         #footer {
             height: 100px;
-            background: #f3f3f3;
+            background: #ffffff;
             position: absolute;
             bottom: 0;
             width: 100%;
