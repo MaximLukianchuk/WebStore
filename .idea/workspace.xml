@@ -1,77 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad5d4b2c-6509-4175-92c3-dc45a9b6c576" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/config/FaviconConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/config/MailConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/config/MvcConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/config/WebSecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/controller/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/controller/ProductController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/controller/ProductReviewController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/controller/RegistrationController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/controller/StoreController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/domain/Batch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/domain/ProductType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/domain/ProductTypeStore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/domain/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/domain/Store.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/domain/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/repos/BatchRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/repos/ProductTypeRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/repos/ProductTypeStoreRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/repos/StoreRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/repos/UserRepo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/service/MailSender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/service/UserDetailsServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/marks/webstore/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/card.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/background.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/becomevip.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/blackfr.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/chess.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cr1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cr2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/cr3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/logoimg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/moto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/smallLogo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/productList.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/greeting.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/carousel.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/common.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/discount.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/dropdown.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/login.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/navbar.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/notUsed/side-bar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/notUsed/sideNav.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/security.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/productReview.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/products.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profileEdit.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/redactorProductAdd.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/redactorProductEdit.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/redactorProductList.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/redactorStoreAdd.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/redactorStoreEdit.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/redactorStoreList.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/registration.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/storeProducts.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/stores.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userEdit.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.ftl" afterDir="false" />
-    </list>
+    <list default="true" id="ad5d4b2c-6509-4175-92c3-dc45a9b6c576" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -252,7 +182,7 @@
           <entry key="mustache" value="460" />
           <entry key="properties" value="299" />
           <entry key="sql" value="252" />
-          <entry key="txt" value="764" />
+          <entry key="txt" value="781" />
           <entry key="xml" value="14" />
         </counts>
       </usages-collector>
@@ -263,7 +193,7 @@
           <entry key="Handlebars/Mustache" value="460" />
           <entry key="JAVA" value="5729" />
           <entry key="Markdown" value="21" />
-          <entry key="PLAIN_TEXT" value="768" />
+          <entry key="PLAIN_TEXT" value="785" />
           <entry key="Properties" value="299" />
           <entry key="SQL" value="49" />
           <entry key="Scratch" value="408" />
@@ -387,7 +317,7 @@
     <option name="ONTO" value="refs/heads/master" />
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="UPDATE_TYPE" value="REBASE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -529,6 +459,45 @@
             </path>
             <path>
               <item name="WebStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebStore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebStore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webstore" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebStore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webstore" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebStore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="webstore" type="462c0819:PsiDirectoryNode" />
+              <item name="repos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebStore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="WebStore" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="uploads" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="WebStore" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -589,7 +558,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544137679131" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544138004131" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -960,16 +929,24 @@
       <option name="project" value="LOCAL" />
       <updated>1544137657314</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="DELETE EVRNG">
+      <created>1544137772412</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1544137772412</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213937000" />
+    <option name="totallyTimeSpent" value="214198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.38187918" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.38187918" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -980,7 +957,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32885906" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" visible="true" weight="0.12214765" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.12214765" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1091,7 +1068,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="few adds" />
     <MESSAGE value="many to one" />
     <MESSAGE value="no more mustache(&#10;freeMaker wlcm" />
     <MESSAGE value="admin panel" />
@@ -1116,7 +1092,8 @@
     <MESSAGE value="add carousel img and discounts&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/marks/webstore/controller/MainController.java&#10;#&#9;src/main/java/marks/webstore/controller/ProductController.java&#10;#&#9;src/main/java/marks/webstore/controller/UserController.java&#10;#&#9;src/main/resources/templates/parts/login.ftl" />
     <MESSAGE value="some adds&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/marks/webstore/controller/MainController.java&#10;#&#9;src/main/java/marks/webstore/controller/ProductController.java&#10;#&#9;src/main/java/marks/webstore/controller/UserController.java&#10;#&#9;src/main/resources/templates/parts/login.ftl" />
     <MESSAGE value="BAD COMMIT&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/marks/webstore/controller/MainController.java&#10;#&#9;src/main/java/marks/webstore/controller/ProductController.java&#10;#&#9;src/main/java/marks/webstore/controller/UserController.java&#10;#&#9;src/main/resources/templates/parts/login.ftl" />
-    <option name="LAST_COMMIT_MESSAGE" value="BAD COMMIT&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/marks/webstore/controller/MainController.java&#10;#&#9;src/main/java/marks/webstore/controller/ProductController.java&#10;#&#9;src/main/java/marks/webstore/controller/UserController.java&#10;#&#9;src/main/resources/templates/parts/login.ftl" />
+    <MESSAGE value="DELETE EVRNG" />
+    <option name="LAST_COMMIT_MESSAGE" value="DELETE EVRNG" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
