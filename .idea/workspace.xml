@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad5d4b2c-6509-4175-92c3-dc45a9b6c576" name="Default Changelist" comment="add profile (need notifications and field checkers)&#10;&#10;# Conflicts:&#10;#&#9;target/classes/marks/webstore/controller/MainController.class&#10;#&#9;target/classes/marks/webstore/controller/StoreController.class&#10;#&#9;target/classes/marks/webstore/controller/UserController.class&#10;#&#9;target/classes/marks/webstore/domain/Store.class&#10;#&#9;target/classes/marks/webstore/repos/ProductTypeStoreRepo.class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profileEdit.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d6f2aafe-75d4-4aff-93dc-8f89f3cde775.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d6f2aafe-75d4-4aff-93dc-8f89f3cde775.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d6f2aafe-75d4-4aff-93dc-8f89f3cde775/storage_v2/_src_/database/webStore.7TGE1A/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d6f2aafe-75d4-4aff-93dc-8f89f3cde775/storage_v2/_src_/database/webStore.7TGE1A/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/parts/common.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/parts/common.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/domain/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/domain/Store.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/domain/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/domain/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/marks/webstore/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/marks/webstore/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/parts/common.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/parts/common.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -164,6 +171,7 @@
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="2" />
           <entry key="project.open.time.19" value="3" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="1" />
@@ -176,7 +184,7 @@
           <entry key="project.open.time.3" value="4" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="4" />
-          <entry key="project.opened" value="37" />
+          <entry key="project.opened" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -278,7 +286,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="das://d6f2aafe-75d4-4aff-93dc-8f89f3cde775/database/webStore/schema/public/table/usr">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -287,7 +295,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -344,7 +352,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
+            <state relative-caret-position="1122">
               <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -531,8 +539,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -712,6 +718,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -825,6 +833,7 @@
       <workItem from="1543871461737" duration="6901000" />
       <workItem from="1543931313977" duration="1224000" />
       <workItem from="1544126335257" duration="599000" />
+      <workItem from="1544136249903" duration="241000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1541594929774</created>
@@ -1117,10 +1126,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229169000" />
+    <option name="totallyTimeSpent" value="229410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.41073826" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1133,7 +1143,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32885906" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" weight="0.3409396" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4986577" visible="true" weight="0.3409396" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1518,13 +1528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://d6f2aafe-75d4-4aff-93dc-8f89f3cde775/database/webStore/schema/public/table/usr">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2210">
@@ -1562,7 +1565,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/marks/webstore/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
+        <state relative-caret-position="1122">
           <caret line="66" column="38" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1581,6 +1584,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://d6f2aafe-75d4-4aff-93dc-8f89f3cde775/database/webStore/schema/public/table/usr">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

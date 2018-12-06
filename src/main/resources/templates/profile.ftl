@@ -1,48 +1,54 @@
 <#import "parts/common.ftl" as c>
-
 <@c.page>
+
 <div class="container">
-    <h5>${user.username}</h5>
-    ${message?ifExists}
-    <form method="post">
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Username:</label>
-            <div class="col-sm-6">
-                <input type="text" name="username" class="form-control" value="${user.username!''}" />
+    <div class="col-sm-12 mt-4">
+        <#if success??>
+            <script language=JavaScript>
+                window.onUnload = swal("Poof! Your profile has been edited!", {
+                    icon: "success",
+                });
+            </script>
+        </#if>
+    </div>
+    <div class="col-sm-12 mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h6>User Profile</h6>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">${usr.name} ${usr.surname}</h5><span><#list usr.roles as role>${role}<#sep>, </#list></span>
             </div>
         </div>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Password:</label>
-            <div class="col-sm-6">
-                <input type="password" name="password" class="form-control" placeholder="Password" />
+    </div>
+    <div class="col-sm-12 mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h6>User info</h6>
+            </div>
+            <div class="card-body">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Username:</th>
+                            <td>${usr.username}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">City:</th>
+                            <td>${usr.city}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email:</th>
+                            <td>${usr.email}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Name:</label>
-            <div class="col-sm-6">
-                <input type="text" name="name" class="form-control" value="${user.name!''}" />
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Surname:</label>
-            <div class="col-sm-6">
-                <input type="text" name="surname" class="form-control" value="${user.surname!''}" />
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label">City:</label>
-            <div class="col-sm-6">
-                <input type="text" name="city" class="form-control" value="${user.city}" />
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Email:</label>
-            <div class="col-sm-6">
-                <input type="email" name="email" class="form-control" placeholder="example@domain.com" value="${user.email!''}" />
-            </div>
-        </div>
-        <input type="hidden" name="_csrf" value="${_csrf.token}" />
-        <button class="btn btn-primary" type="submit">Save</button>
-    </form>
+    </div>
+    <div class="col-sm-12 mt-4">
+        <a href="/user/profile/edit"><button class="btn btn-primary btn-sm" type="submit" style="width: 120px">Edit profile</button></a>
+    </div>
 </div>
+
 </@c.page>
