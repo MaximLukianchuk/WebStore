@@ -17,7 +17,7 @@
                 <h6>User Profile</h6>
             </div>
             <div class="card-body">
-                <h5 class="card-title">${usr.name} ${usr.surname}</h5><span><#list usr.roles as role>${role}<#sep>, </#list></span>
+                <h5 class="card-title">${user.name} ${usr.surname}</h5><span><#list usr.roles as role>${role}<#sep>, </#list></span>
             </div>
         </div>
     </div>
