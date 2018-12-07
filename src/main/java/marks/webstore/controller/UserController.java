@@ -9,6 +9,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
 
@@ -16,12 +17,12 @@ import java.util.Map;
 @RequestMapping("/user")
 public class UserController {
     @Autowired
-    private UserService userSevice;
+    private UserService userService;
 
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     @GetMapping
     public String userList(Model model) {
-        model.addAttribute("users", userSevice.findAll());
+        model.addAttribute("users", userService.findAll());
         return "userList";
     }
 
@@ -40,7 +41,7 @@ public class UserController {
             @RequestParam Map<String, String> form,
             @RequestParam("userId") User user
     ) {
-        userSevice.saveUser(user, username, form);
+        userService.saveUser(user, username, form);
 
         return "redirect:/user";
     }
@@ -48,19 +49,28 @@ public class UserController {
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     @GetMapping("{user}/delete")
     public String delete(User user) {
-        userSevice.deleteUser(user);
+        userService.deleteUser(user);
         return "redirect:/user";
     }
 
     @GetMapping("profile")
-    public String getProfile(Model model, @AuthenticationPrincipal User user) {
-        model.addAttribute("user", user);
+    public String getProfileSuccess(Model model, @AuthenticationPrincipal User user, @RequestParam(required = false) String success) {
+        model.addAttribute("usr", user);
+        if (success.equals("Proof"))
+            model.addAttribute("success", "Your profile has been edited!");
 
         return "profile";
     }
 
-    @PostMapping("profile")
-    public String updateProfile(
+    @GetMapping("profile/edit")
+    public String editProfile(Model model, @AuthenticationPrincipal User user) {
+        model.addAttribute("usr", user);
+
+        return "profileEdit";
+    }
+
+    @PostMapping("profile/edit")
+    public ModelAndView updateProfile(
             @AuthenticationPrincipal User user,
             @RequestParam String username,
             @RequestParam String password,
@@ -69,8 +79,34 @@ public class UserController {
             @RequestParam String city,
             @RequestParam String email
     ) {
-        userSevice.updateProfile(user, username, password, name, surname, city, email);
+        ModelAndView mav = new ModelAndView();
 
-        return "redirect:/user/profile";
+        if (!userService.findUserByUsername(username) && !username.equals(user.getUsername())) {
+            mav.addObject("username_taken", "This username is already taken!");
+            mav.addObject("usr", user);
+            mav.setViewName("profileEdit");
+
+            return mav;
+        }
+
+        if (!userService.loadUserByEmail(email) && !email.equals(user.getEmail())) {
+            mav.addObject("usr", user);
+            mav.addObject("email_taken", "This email is already taken!");
+            mav.setViewName("profileEdit");
+
+            return mav;
+        }
+
+        if (!username.equals(user.getUsername()) || !name.equals(user.getName()) ||
+            !surname.equals(user.getSurname()) || !city.equals(user.getCity()) ||
+            !email.equals(user.getEmail()) || !password.equals(user.getPassword()))
+            mav.addObject("success", "Proof");
+        else
+            mav.addObject("success", "Not");
+        mav.setViewName("redirect:/user/profile");
+
+        userService.updateProfile(user, username, password, name, surname, city, email);
+
+        return mav;
     }
 }

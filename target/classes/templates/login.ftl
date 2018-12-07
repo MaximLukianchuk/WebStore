@@ -1,4 +1,3 @@
-<#--<#import "parts/common.ftl" as C>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +14,6 @@
 </head>
 <body>
 <#import "parts/login.ftl" as L>
-<#--<@C.page>-->
 <div class="container mt-5">
 <#if message??>
     <#if message == "Your account was successfully activated">
@@ -48,4 +46,3 @@
 </div>
 </body>
 </html>
-<#--</@C.page>-->
