@@ -32,7 +32,7 @@ public class RegistrationController {
 
         if (!userService.addUser(user)) {
             model.put("message", "User exists!");
-            models.addAttribute("messages", "This name is already taken!");
+            models.addAttribute("messages", "This username is already taken!");
             return "registration";
         }
 

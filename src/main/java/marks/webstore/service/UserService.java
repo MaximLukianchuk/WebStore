@@ -21,8 +21,8 @@ public class UserService implements UserDetailsService {
     @Autowired
     private MailSender mailSender;
 
-    public User findUserByUsername(User user) {
-        return userRepo.findByUsername(user.getUsername());
+    public boolean findUserByUsername(String username) {
+        return userRepo.findByUsername(username) == null;
     }
 
     public boolean addUser(User user) {
@@ -60,13 +60,15 @@ public class UserService implements UserDetailsService {
     /**
      * Function that checks if the email is already taken
      *
-     * @param user Our new user
+     * @param email Our new email
      * @return true if email is free, false if the email is taken
      */
-    public boolean checkForEmail(User user) {
-        User userFromDb = userRepo.findByEmail(user.getEmail());
+    public boolean loadUserByEmail(String email) {
+        return userRepo.findByEmail(email) == null;
+    }
 
-        return userFromDb == null;
+    public boolean checkForEmail(User user) {
+        return userRepo.findByEmail(user.getEmail()) == null;
     }
 
     public boolean activateUser(String code) {

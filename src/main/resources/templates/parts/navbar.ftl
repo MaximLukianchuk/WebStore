@@ -22,7 +22,7 @@
             </li>
             <#if user??>
             <li class="nav-item">
-                <a class="nav-link" href="/user/profile">Profile</a>
+                <a class="nav-link" href="/user/profile?success">Profile</a>
             </li>
             </#if>
             <#include "dropdown.ftl">
