@@ -26,7 +26,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         , "/registration"
                         , "/static/**"
                         , "/activate/*"
-                        , "/products/**"
+                        , "/products"
+                        ,"/products/{product}"
                         , "/stores/**"
                         , "/img/**")
                 .permitAll()

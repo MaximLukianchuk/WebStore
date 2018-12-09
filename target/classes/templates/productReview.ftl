@@ -32,7 +32,7 @@
                     <i class="fa fa-car" style="font-size:24px"></i>
                     Will be delivered tomorrow
                     <div class="container-fluid-wide">
-                        <button class="btn btn-primary" type="submit" style="display: block; width: 320px;
+                        <button class="btn btn-primary" type="submit" style="display: block; width: 322px;
 padding: 15px 0; margin: 0 -21px -21px;border-radius: 0 0 4px 4px;">Add to cart
                         </button>
                     </div>

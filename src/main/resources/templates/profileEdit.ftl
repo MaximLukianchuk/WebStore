@@ -20,11 +20,13 @@
         <div class="form-row">
             <div class="col-md-6 mt-2">
                 <label>Username:</label>
-                <input type="text" name="username" class="form-control" value="<#if usr??>${usr.username!''}</#if>" required/>
+                <input type="text" name="username" class="form-control" value="<#if usr??>${usr.username!''}</#if>"
+                       required/>
             </div>
             <div class="col-md-6 mt-2">
                 <label>Password:</label>
-                <input type="password" name="password" class="form-control" pattern="^[_a-zA-Z0-9\-]{8,20}$" placeholder="Password" required/>
+                <input type="password" name="password" class="form-control" pattern="^[_a-zA-Z0-9\-]{8,20}$"
+                       placeholder="Password" required/>
                 <small id="passwordHelpInline" class="text-muted">
                     Must be 8-20 characters long.
                 </small>
@@ -43,12 +45,13 @@
             </div>
             <div class="col-md-6 mt-2">
                 <label>Email:</label>
-                <input type="email" name="email" class="form-control" placeholder="example@domain.com" value="${usr.email!''}" required/>
+                <input type="email" name="email" class="form-control" placeholder="example@domain.com"
+                       value="${usr.email!''}" required/>
             </div>
             <div class="col-md-5 mt-3">
-                <input type="hidden" name="_csrf" value="${_csrf.token}" />
-                <button  class="btn btn-primary btn-sm" type="submit" style="width: 120px">Save</button>
-                <#--<button onclick="profileEdited()" class="btn btn-primary btn-sm" type="submit" style="width: 120px"><a href="#" style="color: white; text-decoration: none; display: block">Save</a></button>-->
+                <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                <button class="btn btn-primary btn-sm" type="submit" style="width: 120px">Save</button>
+            <#--<button onclick="profileEdited()" class="btn btn-primary btn-sm" type="submit" style="width: 120px"><a href="#" style="color: white; text-decoration: none; display: block">Save</a></button>-->
             </div>
         </div>
     </form>
