@@ -1,0 +1,91 @@
+<#include "../security.ftl">
+<#if isAdmin || isRedactor>
+    <div id="app">
+        <aside class="main-sidebar fixed offcanvas b-r sidebar-tabs" data-toggle='offcanvas'>
+            <div class="sidebar">
+                <div class="d-flex hv-100 align-items-stretch">
+                    <div class="white text-black-50">
+                        <div class="nav mt-5 pt-5 flex-column nav-pills" id="v-pills-tab" role="tablist"
+                             aria-orientation="vertical">
+                            <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab"
+                               aria-controls="v-pills-home" aria-selected="true"><i class="icon-inbox2"></i></a>
+                            <a class="nav-link blink skin_handle"  href="#"><i class="icon-lightbulb_outline"></i></a>
+                            <a href="">
+                                <figure class="avatar">
+                                    <img src="assets/img/dummy/u3.png" alt="">
+                                    <span class="avatar-badge online"></span>
+                                </figure>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="tab-content flex-grow-1" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                             aria-labelledby="v-pills-home-tab">
+                            <div class="relative brand-wrapper sticky b-b">
+                                <div class="d-flex justify-content-between align-items-center p-3">
+                                    <div class="text-xs-center">
+                                        <span class="font-weight-lighter s-18">Menu</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="sidebar-menu">
+                                <li class="treeview"><a href="#">
+                                    <i class="icon icon icon-package s-24"></i>
+                                    <span>Products</span>
+                                    <i class=" icon-angle-left  pull-right"></i>
+                                </a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="/productsList"><i class="icon icon-circle-o"></i>All
+                                            Products</a>
+                                        </li>
+                                        <li><a href="/products/add"><i class="icon icon-add"></i>Add
+                                            New </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <#if isAdmin>
+                                    <li class="treeview"><a href="#"><i class="icon icon-account_box s-24"></i>Users<i
+                                            class=" icon-angle-left  pull-right"></i></a>
+                                        <ul class="treeview-menu">
+                                            <li><a href="/user"><i class="icon icon-circle-o"></i>All Users</a>
+                                            </li>
+                                            <li><a href="#"><i class="icon icon-user"></i>User Profile </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </#if>
+                            </ul>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="relative brand-wrapper sticky b-b p-3">
+                                <form>
+                                    <div class="form-group input-group-sm has-right-icon">
+                                        <input class="form-control form-control-sm light r-30" placeholder="Search" type="text">
+                                        <i class="icon-search"></i>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <div class="has-sidebar-left">
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="bg-dark pt-2 pb-2 pl-4 pr-2">
+                    <div class="search-bar">
+                        <input class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50" type="text"
+                               placeholder="start typing...">
+                    </div>
+                    <a href="#" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-expanded="false"
+                       aria-label="Toggle navigation" class="paper-nav-toggle paper-nav-white active "><i></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" data-toggle="push-menu" class="paper-nav-toggle left ml-2 fixed">
+        <i></i>
+    </a>
+</#if>

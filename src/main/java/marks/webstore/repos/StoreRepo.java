@@ -1,4 +1,12 @@
 package marks.webstore.repos;
 
-public interface StoreRepo {
+import marks.webstore.domain.Store;
+import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
+
+public interface StoreRepo extends CrudRepository<Store, Long> {
+    List<Store> findAll();
+    Store findByName(String name);
+    Store findById(Integer id);
 }

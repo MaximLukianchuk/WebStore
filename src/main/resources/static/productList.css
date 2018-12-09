@@ -1,0 +1,123 @@
+.codepen {
+    margin-top: 30px;
+}
+
+.outer {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card-wrap {
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    height: 370px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.card-wrap:hover {
+    box-shadow: 0 16px 24px 2px rgba(0,0,0,0.14), 0 6px 30px 5px rgba(0,0,0,0.12), 0 8px 10px -5px rgba(0,0,0,0.3);
+}
+
+.card-wrap.horizontal {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.card-wrap.horizontal,
+.card-wrap.horizontal figure {
+    height: 120px
+}
+
+.card-wrap.horizontal figure {
+    width: 154px;
+    overflow: hidden;
+    position: relative;
+    object-fit: cover;
+    cursor: pointer;
+    border-right: 1px solid #ccc;
+}
+
+.horizontal .card-info {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.horizontal .card-info,
+.horizontal .card-address a,
+.horizontal .card-phone a {
+    color: #888;
+}
+
+.horizontal .card-address {
+    display: flex;
+    flex-grow: 1;
+}
+
+.horizontal .card-address a {
+    text-decoration: none;
+    flex-grow: 1;
+    padding-top: 10px;
+    padding-left: 15px;
+}
+
+.horizontal .card-address .card-title {
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.horizontal .card-phone {
+    display: flex;
+    flex-direction: column;
+    border-left: 0.5px solid #ccc;
+}
+
+.horizontal .card-phone span {
+    display: block;
+    color: white;
+    font-size: 12px;
+}
+
+.horizontal .card-phone a {
+    text-align: center;
+    flex-grow: 1;
+    padding: 20px 15px 0;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.blue {
+    background-color: #007bff;
+}
+
+.green {
+    background-color: green;
+}
+
+.horizontal .card-phone a:first-child {
+    border-bottom: 0.5px solid #ccc;
+}
+
+.green:hover {
+    background-color: #005f00;
+}
+
+.blue:hover {
+    background-color: #0050b4;
+}
+
+.horizontal .card-address:hover,
+.card-img-container:hover + .card-info .card-address {
+    background-color: rgba(178, 178, 178, 0.08);
+}
+
+@media (max-width: 600px) {
+    .horizontal .card-address .card-title {
+        font-size: 12px;
+    }
+}
