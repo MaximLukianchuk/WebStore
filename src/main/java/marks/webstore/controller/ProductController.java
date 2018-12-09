@@ -113,7 +113,7 @@ public class ProductController {
         Iterable<ProductType> producttypes = productTypes;
 
         model.put("producttypes", producttypes);
-        return "redactorStoreList";
+        return "redactorProductList";
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")

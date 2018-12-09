@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface UserStoreRepo extends CrudRepository<UserStore, Long> {
     List<UserStore> findAll();
-    List<UserStore> findAllByStoreId(Integer storeId);
+    List<UserStore> findAllByStoreId(Long storeId);
     List<UserStore> findAllByUserId(Long userId);
 }
