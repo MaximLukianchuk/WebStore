@@ -65,4 +65,12 @@ public class ProductReviewController {
 
         return "redirect:/products/{product}";
     }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @GetMapping("{product}/delete")
+    public String deleteProduct(
+            @PathVariable ProductType product) {
+        productTypeRepo.delete(product);
+        return "redirect:/products";
+    }
 }

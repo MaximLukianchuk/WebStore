@@ -1,9 +1,11 @@
 package marks.webstore.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 public class ProductType {
@@ -17,6 +19,11 @@ public class ProductType {
     private Integer discount;
 
     private String filename;
+
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = ProductTypeStore.class, cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "product")
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<ProductTypeStore> productTypeStores;
+
 
     public ProductType() {
     }
@@ -70,5 +77,13 @@ public class ProductType {
 
     public void setDiscount(Integer discount) {
         this.discount = discount;
+    }
+
+    public List<ProductTypeStore> getProductTypeStores() {
+        return productTypeStores;
+    }
+
+    public void setProductTypeStores(List<ProductTypeStore> productTypeStores) {
+        this.productTypeStores = productTypeStores;
     }
 }
