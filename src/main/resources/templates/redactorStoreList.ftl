@@ -2,39 +2,36 @@
 <@C.page>
 <div class="container mt-5">
     <h2 class="mb-3">Product list</h2>
-    <div class="ui-206">
-        <#list stores as store>
-            <div class="ui-outer">
-                <div class="container">
-                    <div class="row row1">
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-pad">
-                            <div class="ui-logo table-img">
-                                <a href="">
-                                     <#if store.filename??>
-                                         <img class="card-img-top img-responsive" src="/img/${store.filename}" alt="" >
-                                     </#if>
-                                </a>
-                            </div>
+    <#list stores as store>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-wrap horizontal codepen">
+                    <div class="outer">
+                        <a href="#">
+                            <figure>
+                            <#if store.filename??>
+                                <img class="card-img-top img-responsive" src="/img/${store.filename}" alt="" >
+                            </#if>
+                            </figure>
+                        </a>
+                    </div>
+
+                    <div class="card-info">
+                        <div class="card-address">
+                            <a href="#">
+                                <p class="card-title">${store.name}</p>
+                                <p>${store.address}<br>
+                                </p>
+                            </a>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-3 col-pad text-vertical-al">
-                            <div class="ui-content">
-                                <span><a href="">${store.name}</a></span>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4 col-pad text-vertical-al">
-                            <div class="ui-content">
-                                <span><a href="">${store.address}</a></span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-xs-2 col-pad text-vertical-al">
-                            <div class="ui-btn">
-                                <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                            </div>
+                        <div class="card-phone">
+                            <a href="#" class="green"><span>Published</span></a>
+                            <a href="#" class="blue"><span>Edit</span></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </#list>
-    </div>
+        </div>
+    </#list>
 </div>
 </@C.page>

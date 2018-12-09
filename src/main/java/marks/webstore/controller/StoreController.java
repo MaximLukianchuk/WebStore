@@ -63,7 +63,7 @@ public class StoreController {
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
-    @PostMapping("(/addStore")
+    @PostMapping("/addStore")
     public String addStore(
             @RequestParam String name,
             @RequestParam String address,

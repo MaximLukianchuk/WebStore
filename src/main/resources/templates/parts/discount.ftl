@@ -1,6 +1,6 @@
 <script>
     // Set the date we're counting down to
-    var countDownDate = new Date("Dec 6, 2018 23:11:51").getTime();
+    var countDownDate = new Date("Dec 31, 2018 23:59:59").getTime();
 
     // Update the count down every 1 second
     var x = setInterval(function () {
@@ -53,11 +53,6 @@
                             <br> <h5>${producttype.price * (100 - producttype.discount) / 100} $</h5>
                             </p>
                             <hr class="hr">
-                            <p class="see-more">
-                                <a class="seemore" style="text-decoration: none; color: #167ffb" data-toggle="collapse"
-                                   href="#collapse${producttype.id}" aria-expanded="false"
-                                </a>
-                            </p>
                         </div>
                     </div>
                 </div>
