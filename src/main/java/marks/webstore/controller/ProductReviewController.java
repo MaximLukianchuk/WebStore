@@ -2,9 +2,6 @@ package marks.webstore.controller;
 
 import marks.webstore.domain.ProductType;
 import marks.webstore.domain.ProductTypeStore;
-import marks.webstore.repos.ProductTypeRepo;
-import marks.webstore.repos.ProductTypeStoreRepo;
-import marks.webstore.repos.StoreRepo;
 import marks.webstore.service.ProductService;
 import marks.webstore.service.ProductStoreService;
 import marks.webstore.service.StoreService;
