@@ -1,12 +1,7 @@
 package marks.webstore.controller;
 
 import marks.webstore.domain.ProductType;
-<<<<<<< HEAD
-import marks.webstore.domain.Store;
-import marks.webstore.repos.ProductTypeRepo;
-import marks.webstore.repos.StoreRepo;
-=======
->>>>>>> master
+
 import marks.webstore.service.ProductService;
 import marks.webstore.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -45,13 +45,7 @@
                     Will be delivered tomorrow
                     <br>
                     <div class="container-fluid-wide">
-<<<<<<< HEAD
                         <button class="btn btn-primary btn-atc" type="submit">Add to cart</button>
-=======
-                        <button class="btn btn-primary" type="submit" style="display: block; width: 322px;
-padding: 15px 0; margin: 0 -21px -21px;border-radius: 0 0 4px 4px;">Add to cart
-                        </button>
->>>>>>> master
                     </div>
                 </div>
             </div>

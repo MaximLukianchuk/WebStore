@@ -95,13 +95,8 @@ public class StoreController {
 
     @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
     @GetMapping("/stores/{store}")
-<<<<<<< HEAD
-    public String storeProductsList (@PathVariable("store") String storeID, Map<String, Object> models, Model model) {
-        Integer store_id = Integer.parseInt(storeID);
-=======
     public String storeProductsList(@PathVariable("store") String storeID, Map<String, Object> models, Model model) {
         Long store_id = Long.parseLong(storeID);
->>>>>>> master
 
         Store store = storeService.findStoreById(store_id);
 
