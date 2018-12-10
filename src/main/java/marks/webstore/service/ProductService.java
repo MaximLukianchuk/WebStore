@@ -1,14 +1,11 @@
 package marks.webstore.service;
 
 import marks.webstore.domain.ProductType;
-<<<<<<< HEAD
 import marks.webstore.repos.ProductTypeRepo;
-=======
 import marks.webstore.domain.ProductTypeStore;
 import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
->>>>>>> master
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,15 +17,12 @@ public class ProductService {
     @Autowired
     private ProductTypeRepo productTypeRepo;
 
-<<<<<<< HEAD
-=======
     @Autowired
     private ProductTypeStoreRepo productTypeStoreRepo;
 
     @Autowired
     private StoreRepo storeRepo;
 
->>>>>>> master
     public List<ProductType> findAllProductsReverse() {
         List<ProductType> productTypes = productTypeRepo.findAll();
         Collections.reverse(productTypes);
@@ -40,12 +34,6 @@ public class ProductService {
         return productTypeRepo.findAll();
     }
 
-<<<<<<< HEAD
-    public void saveProduct (ProductType productType) {
-        productTypeRepo.save(productType);
-    }
-}
-=======
     public void saveProduct(ProductType productType) {
         productTypeRepo.save(productType);
     }
@@ -75,4 +63,3 @@ public class ProductService {
                 .findAny().get());
     }
 }
->>>>>>> master
