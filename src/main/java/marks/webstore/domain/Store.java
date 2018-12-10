@@ -18,7 +18,8 @@ public class Store {
 
     private String filename;
 
-    @OneToMany(fetch=FetchType.EAGER, targetEntity = ProductTypeStore.class, cascade=CascadeType.REMOVE, orphanRemoval=true, mappedBy="store")
+    @OneToMany(fetch=FetchType.EAGER, targetEntity = ProductTypeStore.class,
+            cascade = {CascadeType.REMOVE, CascadeType.DETACH}, orphanRemoval=true, mappedBy="store")
     @Fetch(value = FetchMode.SUBSELECT)
     private List<ProductTypeStore> productTypeStores;
 

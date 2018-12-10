@@ -6,6 +6,9 @@ import marks.webstore.domain.Store;
 import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
+import marks.webstore.service.ProductService;
+import marks.webstore.service.ProductStoreService;
+import marks.webstore.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -26,23 +29,20 @@ import java.util.UUID;
 @Controller
 public class ProductController {
     @Autowired
-    private ProductTypeRepo productTypeRepo;
+    private ProductService productService;
 
     @Autowired
-    private StoreRepo storeRepo;
+    private StoreService storeService;
 
     @Autowired
-    private ProductTypeStoreRepo productTypeStoreRepo;
+    private ProductStoreService productStoreService;
 
     @Value("${upload.path}")
     private String uploadPath;
 
     @GetMapping("/products")
     public String products(Map<String, Object> model) {
-        List<ProductType> productTypes = productTypeRepo.findAll();
-        Collections.reverse(productTypes);
-
-        model.put("producttypes", productTypes);
+        model.put("producttypes", productService.findAllProductsReverse());
 
         return "products";
     }
@@ -50,10 +50,7 @@ public class ProductController {
     @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
     @GetMapping("/productsList")
     public String productsList(Map<String, Object> model) {
-        List<ProductType> productTypes = productTypeRepo.findAll();
-        Collections.reverse(productTypes);
-
-        model.put("producttypes", productTypes);
+        model.put("producttypes", productService.findAllProductsReverse());
 
         return "redactorProductList";
     }
@@ -71,11 +68,9 @@ public class ProductController {
             Integer discount,
             Model models
     ) throws IOException {
-        List<Store> storesbd = storeRepo.findAll();
-        Collections.reverse(storesbd);
+        model.put("stores", storeService.findAllStoresReverse());
 
-        model.put("stores", storesbd);
-        if (productTypeRepo.findAll().stream().noneMatch(productType -> productType.getName().equals(name))) {
+        if (productService.findAllProducts().stream().noneMatch(productType -> productType.getName().equals(name))) {
 
             ProductType productType = new ProductType(name, price, description, discount);
 
@@ -95,7 +90,7 @@ public class ProductController {
             }
 
 
-            Store store = storeRepo.findByName(storeName);
+            Store store = storeService.findStoreByName(storeName);
 
             if (store == null) {
                 models.addAttribute("addProductError", "Store " + storeName + " does not exist!");
@@ -104,25 +99,20 @@ public class ProductController {
 
             ProductTypeStore productTypeStore = new ProductTypeStore(productType, store, amount);
 
-            productTypeRepo.save(productType);
-            productTypeStoreRepo.save(productTypeStore);
+            productService.saveProduct(productType);
+            productStoreService.saveProductTypeStore(productTypeStore);
         }
 
-        List<ProductType> productTypes = productTypeRepo.findAll();
-        Collections.reverse(productTypes);
-        Iterable<ProductType> producttypes = productTypes;
+        Iterable<ProductType> producttypes = productService.findAllProductsReverse();;
 
         model.put("producttypes", producttypes);
-        return "redactorProductList";
+        return "redactorStoreList";
     }
 
     @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
     @GetMapping("/addProduct")
     public String addProducts (Map<String, Object> model) {
-        List<Store> storesbd = storeRepo.findAll();
-        Collections.reverse(storesbd);
-
-        model.put("stores", storesbd);
+        model.put("stores", storeService.findAllStoresReverse());
 
         return "redactorProductAdd";
     }
