@@ -1,9 +1,13 @@
 package marks.webstore.controller;
 
 import marks.webstore.domain.ProductType;
+import marks.webstore.domain.ProductTypeStore;
 import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
+import marks.webstore.service.ProductService;
+import marks.webstore.service.ProductStoreService;
+import marks.webstore.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -15,16 +19,19 @@ import org.springframework.web.bind.annotation.*;
 public class ProductReviewController {
 
     @Autowired
-    private StoreRepo storeRepo;
+    private ProductStoreService productStoreService;
 
     @Autowired
-    private ProductTypeStoreRepo productTypeStoreRepo;
+    private StoreService storeService;
 
     @Autowired
-    private ProductTypeRepo productTypeRepo;
+    private ProductService productService;
 
     @GetMapping("{product}")
     public String productReviewForm(@PathVariable ProductType product, Model model) {
+        ProductTypeStore productTypeStore = productStoreService.findStoreByProduct(product);
+
+        model.addAttribute("store", productTypeStore);
         model.addAttribute("product", product);
         return "productReview";
     }
@@ -32,9 +39,9 @@ public class ProductReviewController {
     @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
     @GetMapping("{product}/edit")
     public String editProduct(@PathVariable ProductType product, Model model) {
-        Long amountOfProducts = productTypeStoreRepo.findAllByProductId(product.getId()).get(0).getAmount();
+        Long amountOfProducts = productStoreService.findAllByProductId(product.getId()).get(0).getAmount();
         model.addAttribute("product", product);
-        model.addAttribute("stores", storeRepo.findAll());
+        model.addAttribute("stores", storeService.findAllStores());
         model.addAttribute("amountofproducts", amountOfProducts);
         return "redactorProductEdit";
     }
@@ -49,19 +56,7 @@ public class ProductReviewController {
             @RequestParam Long amount,
             @RequestParam String description
             ) {
-        product.setName(name);
-        product.setPrice(price);
-        product.setDescription(description);
-        productTypeStoreRepo.findAll().stream()
-                .filter(productTypeStore -> productTypeStore.getProduct().getId().equals(product.getId()))
-                .findAny().get().setStore(storeRepo.findByName(storeName));
-        productTypeStoreRepo.findAll().stream()
-                .filter(productTypeStore -> productTypeStore.getProduct().getId().equals(product.getId()))
-                .findAny().get().setAmount(amount);
-        productTypeRepo.save(product);
-        productTypeStoreRepo.save(productTypeStoreRepo.findAll().stream()
-                .filter(productTypeStore -> productTypeStore.getProduct().getId().equals(product.getId()))
-                .findAny().get());
+        productService.updateProduct(product, name, storeName, price, amount, description);
 
         return "redirect:/products/{product}";
     }
@@ -70,7 +65,7 @@ public class ProductReviewController {
     @GetMapping("{product}/delete")
     public String deleteProduct(
             @PathVariable ProductType product) {
-        productTypeRepo.delete(product);
+        productService.deleteProduct(product);
         return "redirect:/products";
     }
 }

@@ -1,10 +1,11 @@
 package marks.webstore.controller;
 
-import marks.webstore.domain.ProductTypeStore;
 import marks.webstore.domain.Store;
 import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
+import marks.webstore.service.ProductStoreService;
+import marks.webstore.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,31 +19,24 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 @Controller
 public class StoreController {
-    @Autowired
-    private StoreRepo storeRepo;
 
     @Autowired
-    private ProductTypeStoreRepo productTypeStoreRepo;
+    private StoreService storeService;
 
     @Autowired
-    private ProductTypeRepo productTypeRepo;
+    private ProductStoreService productStoreService;
 
     @Value("${upload.path}")
     private String uploadPath;
 
     @GetMapping("/stores")
     public String stores(Map<String, Object> model) {
-        List<Store> storesbd = storeRepo.findAll();
-        Collections.reverse(storesbd);
-
-        model.put("stores", storesbd);
+        model.put("stores", storeService.findAllStoresReverse());
 
         return "stores";
     }
@@ -50,10 +44,7 @@ public class StoreController {
     @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
     @GetMapping("/storesList")
     public String storesList(Map<String, Object> model) {
-        List<Store> storesbd = storeRepo.findAll();
-        Collections.reverse(storesbd);
-
-        model.put("stores", storesbd);
+        model.put("stores", storeService.findAllStoresReverse());
 
         return "redactorStoreList";
     }
@@ -61,10 +52,7 @@ public class StoreController {
     @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
     @GetMapping("/addStore")
     public String storesAdd(Map<String, Object> model) {
-        List<Store> storesbd = storeRepo.findAll();
-        Collections.reverse(storesbd);
-
-        model.put("stores", storesbd);
+        model.put("stores", storeService.findAllStoresReverse());
 
         return "redactorStoreAdd";
     }
@@ -77,7 +65,7 @@ public class StoreController {
             Map<String, Object> model,
             @RequestParam("file") MultipartFile file
     ) throws IOException {
-        if (storeRepo.findAll().stream().noneMatch(store -> store.getName().equals(name))) {
+        if (storeService.findAllStores().stream().noneMatch(store -> store.getName().equals(name))) {
 
             Store newStore = new Store(name, address);
 
@@ -96,12 +84,10 @@ public class StoreController {
                 newStore.setFilename(resultFilename);
             }
 
-            storeRepo.save(newStore);
+            storeService.saveStore(newStore);
         }
 
-        List<Store> storedb = storeRepo.findAll();
-        Collections.reverse(storedb);
-        Iterable<Store> stores = storedb;
+        Iterable<Store> stores = storeService.findAllStoresReverse();
 
         model.put("stores", stores);
         return "stores";
@@ -112,13 +98,10 @@ public class StoreController {
     public String storeProductsList(@PathVariable("store") String storeID, Map<String, Object> models, Model model) {
         Long store_id = Long.parseLong(storeID);
 
-        Store store = storeRepo.findStoreById(store_id);
-
-        List<ProductTypeStore> productTypeStores = productTypeStoreRepo.findAllByStoreId(store.getId());
-        Collections.reverse(productTypeStores);
+        Store store = storeService.findStoreById(store_id);
 
         model.addAttribute("storeName", store.getName());
-        models.put("productTypeStores", productTypeStores);
+        models.put("productTypeStores", productStoreService.findAllByStoreIdReverse(store.getId()));
 
         return "storeProducts";
     }
@@ -138,10 +121,7 @@ public class StoreController {
             @RequestParam String name,
             @RequestParam String address
     ) {
-        store.setName(name);
-        store.setAddress(address);
-
-        storeRepo.save(store);
+        storeService.updateStore(store, name, address);
 
         return "redirect:/stores/{store}";
     }
@@ -150,7 +130,7 @@ public class StoreController {
     @GetMapping("stores/{store}/delete")
     public String deleteStore(
             @PathVariable Store store) {
-        storeRepo.delete(store);
+        storeService.deleteStore(store);
         return "redirect:/stores";
     }
 }

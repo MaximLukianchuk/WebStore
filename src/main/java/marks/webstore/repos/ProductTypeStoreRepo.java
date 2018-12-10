@@ -1,5 +1,6 @@
 package marks.webstore.repos;
 
+import marks.webstore.domain.ProductType;
 import marks.webstore.domain.ProductTypeStore;
 import org.springframework.data.repository.CrudRepository;
 
@@ -9,4 +10,5 @@ public interface ProductTypeStoreRepo extends CrudRepository<ProductTypeStore, L
     List<ProductTypeStore> findAllByStoreId(Long storeId);
     List<ProductTypeStore> findAllByProductId(Long productId);
     List<ProductTypeStore> findAll();
+    ProductTypeStore findStoreByProduct(ProductType productType);
 }
