@@ -68,15 +68,5 @@
             }, false);
         }, false);
     })();
-
-    function profileEdited() {
-        swal("Poof! Your profile has been edited!", {
-            icon: "success",
-        }).then((ok) => {
-            if (ok) {
-                window.location.href = "/user/profile";
-            }
-        });
-    }
 </script>
 </@c.page>

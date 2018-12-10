@@ -10,7 +10,9 @@
                         <a href="#">
                             <figure>
                             <#if store.filename??>
-                                <img class="card-img-top img-responsive" src="/img/${store.filename}" alt="" >
+                                <div class="img-height-list img-wrap-list">
+                                    <img class="img-responsive" src="/img/${store.filename}" alt="" >
+                                </div>
                             </#if>
                             </figure>
                         </a>

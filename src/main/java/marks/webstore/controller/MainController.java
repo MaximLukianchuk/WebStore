@@ -4,6 +4,8 @@ import marks.webstore.domain.ProductType;
 import marks.webstore.domain.Store;
 import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.repos.StoreRepo;
+import marks.webstore.service.ProductService;
+import marks.webstore.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -17,25 +19,20 @@ import java.util.stream.Collectors;
 @Controller
 public class MainController {
     @Autowired
-    private ProductTypeRepo productTypeRepo;
+    private ProductService productService;
 
     @Autowired
-    private StoreRepo storeRepo;
+    private StoreService storeService;
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
-        List<ProductType> productTypes = productTypeRepo.findAll();
-        Collections.reverse(productTypes);
-        List<ProductType> productTypesWithDiscount = productTypes.stream()
+        List<ProductType> productTypesWithDiscount = productService.findAllProductsReverse().stream()
                 .filter(productType -> productType.getDiscount() != null)
                 .collect(Collectors.toList());
 
         model.put("producttypeswithdisk", productTypesWithDiscount);
 
-        List<Store> storesbd = storeRepo.findAll();
-        Collections.reverse(storesbd);
-
-        model.put("stores", storesbd);
+        model.put("stores", storeService.findAllStoresReverse());
         return "greeting";
     }
 }
