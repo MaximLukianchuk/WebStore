@@ -45,7 +45,7 @@
 
 
 <div id="footer" class="text-center">
-    <footer class="footer text-center">
+    <footer>
         <p>Made by Mark-and-Max</p>
     </footer>
 </div>

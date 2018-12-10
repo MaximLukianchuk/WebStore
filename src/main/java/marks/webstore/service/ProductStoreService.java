@@ -6,7 +6,10 @@ import marks.webstore.repos.ProductTypeStoreRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+<<<<<<< HEAD
 import javax.persistence.criteria.CriteriaBuilder;
+=======
+>>>>>>> master
 import java.util.Collections;
 import java.util.List;
 
@@ -23,10 +26,32 @@ public class ProductStoreService {
         return productTypeStoreRepo.findStoreByProduct(productType);
     }
 
+<<<<<<< HEAD
     public List<ProductTypeStore> findAllByStoreIdReverse(Integer storeId) {
+=======
+    public List<ProductTypeStore> findAllByStoreIdReverse(Long storeId) {
+>>>>>>> master
         List<ProductTypeStore> productTypeStores = productTypeStoreRepo.findAllByStoreId(storeId);
         Collections.reverse(productTypeStores);
 
         return productTypeStores;
     }
+<<<<<<< HEAD
 }
+=======
+
+    public List<ProductTypeStore> findAllProductStores() {
+        List<ProductTypeStore> productTypeStores = productTypeStoreRepo.findAll();
+        Collections.reverse(productTypeStores);
+
+        return productTypeStores;
+    }
+
+    public List<ProductTypeStore> findAllByProductId(Long productId) {
+        List<ProductTypeStore> productTypeStores = productTypeStoreRepo.findAllByProductId(productId);
+        Collections.reverse(productTypeStores);
+
+        return productTypeStores;
+    }
+}
+>>>>>>> master

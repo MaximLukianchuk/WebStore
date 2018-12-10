@@ -98,8 +98,8 @@ public class UserController {
         }
 
         if (!username.equals(user.getUsername()) || !name.equals(user.getName()) ||
-            !surname.equals(user.getSurname()) || !city.equals(user.getCity()) ||
-            !email.equals(user.getEmail()) || !password.equals(user.getPassword()))
+                !surname.equals(user.getSurname()) || !city.equals(user.getCity()) ||
+                !email.equals(user.getEmail()) || !password.equals(user.getPassword()))
             mav.addObject("success", "Proof");
         else
             mav.addObject("success", "Not");

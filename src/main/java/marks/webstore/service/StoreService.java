@@ -32,7 +32,25 @@ public class StoreService {
         storeRepo.save(store);
     }
 
+<<<<<<< HEAD
     public Store findStoreById(Integer id) {
         return storeRepo.findById(id);
     }
 }
+=======
+    public Store findStoreById(Long id) {
+        return storeRepo.findStoreById(id);
+    }
+
+    public void updateStore(Store store, String name, String address) {
+        store.setName(name);
+        store.setAddress(address);
+
+        storeRepo.save(store);
+    }
+
+    public void deleteStore(Store store) {
+        storeRepo.delete(store);
+    }
+}
+>>>>>>> master

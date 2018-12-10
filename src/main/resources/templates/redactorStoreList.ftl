@@ -28,7 +28,7 @@
                         </div>
                         <div class="card-phone">
                             <a href="#" class="green"><span>Published</span></a>
-                            <a href="#" class="blue"><span>Edit</span></a>
+                            <a href="/stores/${store.id}/edit" class="blue"><span>Edit</span></a>
                         </div>
                     </div>
                 </div>

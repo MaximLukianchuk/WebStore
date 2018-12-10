@@ -1,7 +1,7 @@
 package marks.webstore.controller;
 
-import marks.webstore.domain.ProductTypeStore;
 import marks.webstore.domain.Store;
+import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
 import marks.webstore.service.ProductStoreService;
@@ -11,18 +11,20 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 @Controller
 public class StoreController {
+
     @Autowired
     private StoreService storeService;
 
@@ -93,8 +95,13 @@ public class StoreController {
 
     @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
     @GetMapping("/stores/{store}")
+<<<<<<< HEAD
     public String storeProductsList (@PathVariable("store") String storeID, Map<String, Object> models, Model model) {
         Integer store_id = Integer.parseInt(storeID);
+=======
+    public String storeProductsList(@PathVariable("store") String storeID, Map<String, Object> models, Model model) {
+        Long store_id = Long.parseLong(storeID);
+>>>>>>> master
 
         Store store = storeService.findStoreById(store_id);
 
@@ -102,5 +109,33 @@ public class StoreController {
         models.put("productTypeStores", productStoreService.findAllByStoreIdReverse(store.getId()));
 
         return "storeProducts";
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @GetMapping("/stores/{store}/edit")
+    public String editStore(@PathVariable Store store, Model model) {
+
+        model.addAttribute("store", store);
+        return "redactorStoreEdit";
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @PostMapping("/stores/{store}/edit")
+    public String updateStore(
+            @PathVariable Store store,
+            @RequestParam String name,
+            @RequestParam String address
+    ) {
+        storeService.updateStore(store, name, address);
+
+        return "redirect:/stores/{store}";
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN', 'REDACTOR')")
+    @GetMapping("stores/{store}/delete")
+    public String deleteStore(
+            @PathVariable Store store) {
+        storeService.deleteStore(store);
+        return "redirect:/stores";
     }
 }
