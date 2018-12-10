@@ -12,7 +12,7 @@ public class ProductTypeStore {
 
     private Long amount;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE, CascadeType.DETACH})
     @JoinColumn(name = "product_type_id")
     private ProductType product;
 

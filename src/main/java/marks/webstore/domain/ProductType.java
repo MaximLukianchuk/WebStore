@@ -4,7 +4,6 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -20,7 +19,8 @@ public class ProductType {
 
     private String filename;
 
-    @OneToMany(fetch = FetchType.EAGER, targetEntity = ProductTypeStore.class, cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "product")
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = ProductTypeStore.class,
+            cascade = {CascadeType.REMOVE, CascadeType.DETACH}, orphanRemoval = true, mappedBy = "product")
     @Fetch(value = FetchMode.SUBSELECT)
     private List<ProductTypeStore> productTypeStores;
 
