@@ -2,6 +2,11 @@ package marks.webstore.controller;
 
 import marks.webstore.domain.ProductType;
 import marks.webstore.domain.ProductTypeStore;
+<<<<<<< HEAD
+import marks.webstore.repos.ProductTypeStoreRepo;
+import marks.webstore.service.ProductStoreService;
+import org.springframework.beans.factory.annotation.Autowired;
+=======
 import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.repos.ProductTypeStoreRepo;
 import marks.webstore.repos.StoreRepo;
@@ -10,6 +15,7 @@ import marks.webstore.service.ProductStoreService;
 import marks.webstore.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+>>>>>>> master
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,12 +27,15 @@ public class ProductReviewController {
     @Autowired
     private ProductStoreService productStoreService;
 
+<<<<<<< HEAD
+=======
     @Autowired
     private StoreService storeService;
 
     @Autowired
     private ProductService productService;
 
+>>>>>>> master
     @GetMapping("{product}")
     public String productReviewForm(@PathVariable ProductType product, Model model) {
         ProductTypeStore productTypeStore = productStoreService.findStoreByProduct(product);

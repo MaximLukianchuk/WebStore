@@ -2,39 +2,56 @@
 <@C.page>
 <div class="container">
     <div class="row">
-        <div class="col-sm">
-            <img style="max-width: 400px" src="/img/${product.filename}">
+        <div class="col-md-6 mt-4">
+            <div class="card card-height">
+                <img class="img-wrapper" src="/img/${product.filename}">
+            </div>
         </div>
-        <div class="col-sm">
-            <h2 class="mb-3">${product.name}
-                <div class="small" style="margin-top: 10px">
-                    <#if product.description??>
-                        ${product.description}
-                    <#else>
-                        No description.
-                    </#if>
-                </div>
-            </h2>
-        </div>
-        <div class="col-sm">
-            <div class="card" style="width: 20rem;">
+
+        <div class="col-md-6 mt-4">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"><#if product.discount??>
-                        <del style="color:red;text-decoration:line-through">${product.price} $</del>
-                        <br> <h5>${product.price * (100 - product.discount) / 100} $</h5>
-                    <#else>
-                            <p>${product.price} $</p>
-                    </#if></h5>
+                    <h2 class="mb-3">${product.name}</h2>
+                    <div>
+                        <#if product.description??>
+                            <p>${product.description}</p>
+                        <#else>
+                            <p>No description.</p>
+                        </#if>
+                    </div>
+                    <hr>
+                    <h5 class="card-title">
+                        <#if product.discount??>
+                            <del class="red-font">${product.price} $</del> <span class="red-font">(-${product.discount}%)</span>
+                            <br><br>
+                            <p>Final price: ${product.price * (100 - product.discount) / 100} $</p>
+                        <#else>
+                            <p>Price: ${product.price} $</p>
+                        </#if>
+                    </h5>
                     <hr>
                     <i class="fa fa-check" style="font-size:24px"></i>
-                    Available
+                        <#if store.amount != 0>
+                            <#if store.amount < 10>
+                                Only ${store.amount} left available!
+                            <#else>
+                                ${store.amount} left available
+                            </#if>
+                        <#else>
+                            Not available
+                        </#if>
                     <br>
                     <i class="fa fa-car" style="font-size:24px"></i>
                     Will be delivered tomorrow
+                    <br>
                     <div class="container-fluid-wide">
+<<<<<<< HEAD
+                        <button class="btn btn-primary btn-atc" type="submit">Add to cart</button>
+=======
                         <button class="btn btn-primary" type="submit" style="display: block; width: 322px;
 padding: 15px 0; margin: 0 -21px -21px;border-radius: 0 0 4px 4px;">Add to cart
                         </button>
+>>>>>>> master
                     </div>
                 </div>
             </div>

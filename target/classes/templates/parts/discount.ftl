@@ -1,10 +1,6 @@
 <script>
     // Set the date we're counting down to
-<<<<<<< HEAD
     let countDownDate = new Date("Dec 9, 2018 23:11:51").getTime();
-=======
-    var countDownDate = new Date("Dec 31, 2018 23:59:59").getTime();
->>>>>>> master
 
     // Update the count down every 1 second
     let x = setInterval(function () {

@@ -32,6 +32,12 @@ public class StoreService {
         storeRepo.save(store);
     }
 
+<<<<<<< HEAD
+    public Store findStoreById(Integer id) {
+        return storeRepo.findById(id);
+    }
+}
+=======
     public Store findStoreById(Long id) {
         return storeRepo.findStoreById(id);
     }
@@ -47,3 +53,4 @@ public class StoreService {
         storeRepo.delete(store);
     }
 }
+>>>>>>> master
