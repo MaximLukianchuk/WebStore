@@ -86,7 +86,8 @@
 .horizontal .card-phone a {
     text-align: center;
     flex-grow: 1;
-    padding: 20px 15px 0;
+    width: 125px;
+    padding-top: 23px;
     text-decoration: none;
     transition: 0.2s;
 }
@@ -97,6 +98,14 @@
 
 .green {
     background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
 }
 
 .horizontal .card-phone a:first-child {

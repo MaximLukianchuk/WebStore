@@ -1,11 +1,15 @@
 package marks.webstore.domain;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "usr")
@@ -18,6 +22,7 @@ public class User implements UserDetails {
     private String name;
     private String surname;
     private String city;
+    private Boolean allowedToCreateStores;
     private String email;
     private String activationCode;
     private boolean active;
@@ -27,16 +32,44 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 
-    public User(String username, String password, String name, String surname, String city, String email) {
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = UserStore.class,
+            cascade = {CascadeType.REMOVE, CascadeType.DETACH}, orphanRemoval = true, mappedBy = "user")
+    @Fetch(value = FetchMode.SUBSELECT)
+    private Set<UserStore> userStores;
+
+    public User(String username, String password, String name, String surname, String city, String email, Boolean allowedToCreateStores) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.surname = surname;
         this.city = city;
         this.email = email;
+        this.allowedToCreateStores = allowedToCreateStores;
     }
 
     public User() {
+    }
+
+    public List<Store> getStores() {
+        return userStores.stream()
+                .map(UserStore::getStore)
+                .collect(Collectors.toList());
+    }
+
+    public Set<UserStore> getUserStores() {
+        return userStores;
+    }
+
+    public void setUserStores(Set<UserStore> userStores) {
+        this.userStores = userStores;
+    }
+
+    public Boolean getAllowedToCreateStores() {
+        return allowedToCreateStores;
+    }
+
+    public void setAllowedToCreateStores(Boolean allowedToCreateStores) {
+        this.allowedToCreateStores = allowedToCreateStores;
     }
 
     public boolean isAdmin() {
@@ -49,10 +82,6 @@ public class User implements UserDetails {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getUsername() {
@@ -151,4 +180,6 @@ public class User implements UserDetails {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
 }

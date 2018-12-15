@@ -5,10 +5,24 @@
 
 <form action="/user" method="post">
     <input type="text" name="username" style="width: 18rem;" class="form-control mt-3 mb-2" value="${user.username}" placeholder="Name">
+    <hr>
     <#list roles as role>
         <div class="custom-control custom-checkbox">
             <input type="checkbox" name="${role}" ${user.roles?seq_contains(role)?string("checked", "")} class="custom-control-input" id="${role}">
             <label class="custom-control-label" for="${role}">  ${role}</label>
+        </div>
+    </#list>
+    <hr>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" name="allowedToCreateStores" ${allowedToCreateStores?string("checked", "")} class="custom-control-input" id="allowedToCreateStores">
+        <label class="custom-control-label" for="allowedToCreateStores">  Allowed to create stores</label>
+    </div>
+    <hr>
+    <h3 class="mb-3">Available stores:</h3>
+    <#list stores as store>
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" name="${store.id}" ${userStores?seq_contains(store)?string("checked", "")} class="custom-control-input" id="${store.id}">
+            <label class="custom-control-label" for="${store.id}">  ${store.name}</label>
         </div>
     </#list>
     <input type="hidden" value="${user.id}" name = "userId">

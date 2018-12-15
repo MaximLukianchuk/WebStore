@@ -5,6 +5,7 @@ import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 public class ProductType {
@@ -13,9 +14,10 @@ public class ProductType {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private Float price;
+    private Double price;
     private String description;
     private Integer discount;
+    private Boolean isPublished;
 
     private String filename;
 
@@ -28,11 +30,12 @@ public class ProductType {
     public ProductType() {
     }
 
-    public ProductType(String name, Float price, String description, Integer discount) {
+    public ProductType(String name, Double price, String description, Integer discount, Boolean isPublished) {
         this.name = name;
-        this.price = price;
+        this.price = (double)Math.round(price * 100d) / 100d;
         this.description = description;
         this.discount = discount;
+        this.isPublished = isPublished;
     }
 
     public Long getId() {
@@ -55,11 +58,11 @@ public class ProductType {
         this.filename = filename;
     }
 
-    public Float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -85,5 +88,13 @@ public class ProductType {
 
     public void setProductTypeStores(List<ProductTypeStore> productTypeStores) {
         this.productTypeStores = productTypeStores;
+    }
+
+    public Boolean getPublished() {
+        return isPublished;
+    }
+
+    public void setPublished(Boolean published) {
+        isPublished = published;
     }
 }
