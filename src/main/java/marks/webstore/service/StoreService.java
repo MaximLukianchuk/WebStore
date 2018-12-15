@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class StoreService {
@@ -24,6 +25,21 @@ public class StoreService {
         return storeRepo.findAll();
     }
 
+    public List<Store> findAllPublishedStores() {
+        return findAllStores().stream()
+                .filter(Store::getPublished)
+                .collect(Collectors.toList());
+    }
+
+    public List<Store> findAllPublishedStoresReverse() {
+        List<Store> storesBd = findAllStores().stream()
+                .filter(Store::getPublished)
+                .collect(Collectors.toList());
+        Collections.reverse(storesBd);
+
+        return storesBd;
+    }
+
     public Store findStoreByName(String storeName) {
         return storeRepo.findByName(storeName);
     }
@@ -37,9 +53,10 @@ public class StoreService {
         return storeRepo.findStoreById(id);
     }
 
-    public void updateStore(Store store, String name, String address) {
+    public void updateStore(Store store, String name, String description, Boolean isPublished) {
         store.setName(name);
-        store.setAddress(address);
+        store.setDescription(description);
+        store.setPublished(isPublished);
 
         storeRepo.save(store);
     }

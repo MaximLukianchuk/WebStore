@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as C>
 <@C.page>
 <div class="container mt-5">
-    <h2 class="mb-3">Product list</h2>
+    <h2 class="mb-3">Product list:</h2>
     <div class="">
         <div class="row">
             <#list producttypes as producttype>
@@ -20,7 +20,7 @@
                                 <#if producttype.discount??>
                                     <del style="color:red;text-decoration:line-through">${producttype.price} $</del>
                                     <br> <h5>${producttype.price * (100 - producttype.discount) / 100} $</h5>
-                                    <#else>
+                                <#else>
                                 <p>${producttype.price} $</p>
                                 </#if>
                             </div>
@@ -45,7 +45,8 @@
                         <div class="card-footer text-muted" style="background-color: white">
                             <div class="row">
                                 <div class="col">
-                                    <a href="#" class="seemore" style="text-decoration: none; float: right;">Add to cart</a>
+                                    <a href="#" class="seemore" style="text-decoration: none; float: right;">Add to
+                                        cart</a>
                                 </div>
                             </div>
                         </div>

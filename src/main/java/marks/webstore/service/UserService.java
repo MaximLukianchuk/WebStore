@@ -1,13 +1,18 @@
 package marks.webstore.service;
 
 import marks.webstore.domain.Role;
+import marks.webstore.domain.Store;
 import marks.webstore.domain.User;
+import marks.webstore.domain.UserStore;
+import marks.webstore.repos.StoreRepo;
 import marks.webstore.repos.UserRepo;
+import marks.webstore.repos.UserStoreRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.util.NumberUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.*;
@@ -20,6 +25,12 @@ public class UserService implements UserDetailsService {
 
     @Autowired
     private MailSender mailSender;
+
+    @Autowired
+    private StoreRepo storeRepo;
+
+    @Autowired
+    UserStoreRepo userStoreRepo;
 
     public boolean findUserByUsername(String username) {
         return userRepo.findByUsername(username) == null;
@@ -80,6 +91,7 @@ public class UserService implements UserDetailsService {
 
         user.setActive(true);
         user.setActivationCode(null);
+        user.setAllowedToCreateStores(false);
 
         userRepo.save(user);
 
@@ -92,10 +104,13 @@ public class UserService implements UserDetailsService {
 
     public void saveUser(User user, String username, Map<String, String> form) {
         user.setUsername(username);
+        user.getRoles().clear();
+        user.setAllowedToCreateStores(false);
 
         Set<String> roles = Arrays.stream(Role.values()).map(Role::name).collect(Collectors.toSet());
-
-        user.getRoles().clear();
+        Set<Long> storesId = storeRepo.findAll().stream() // Айди всех существующих магазинов [Long]
+                .map(Store::getId)
+                .collect(Collectors.toSet());
 
         for (String key : form.keySet()) {
             if (roles.contains(key)) {
@@ -103,6 +118,31 @@ public class UserService implements UserDetailsService {
             }
         }
 
+        userStoreRepo.findAllByUser(user).forEach(userStore -> userStoreRepo.delete(userStore));
+
+        //System.out.println(Arrays.toString(form.keySet().toArray())); // лог
+
+        user.getUserStores().clear();
+
+        for (String key : form.keySet()) {
+            for (Long store : storesId)
+                if (key.matches("[-+]?\\d+")) {
+                    if (store.equals(storeRepo.findStoreById(Long.parseLong(key)).getId())) {
+                        userStoreRepo.save(new UserStore(user, storeRepo.findStoreById(Long.parseLong(key))));
+                    }
+                }
+        }
+
+        for (String key : form.keySet()) {
+            if (key.equals("allowedToCreateStores")) {
+                user.setAllowedToCreateStores(true);
+            }
+        }
+
+        userRepo.save(user);
+    }
+
+    public void fastSave(User user) {
         userRepo.save(user);
     }
 

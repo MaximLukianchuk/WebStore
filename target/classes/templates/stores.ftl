@@ -15,7 +15,7 @@
                         <div class="card-body">
                             <div style="height: 75px">
                                 <h5 class="card-title">${store.name}</h5>
-                                <p>${store.address}</p>
+                                <p>${store.description}</p>
                             </div>
                             <hr class="hr">
                                 <button type="submit" class="btn btn-primary see-prod"><a href="/stores/${store.id}" class="see-prod" style="text-decoration: none; display: block">

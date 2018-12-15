@@ -14,7 +14,8 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private String address;
+    private String description;
+    private Boolean isPublished;
 
     private String filename;
 
@@ -23,12 +24,26 @@ public class Store {
     @Fetch(value = FetchMode.SUBSELECT)
     private List<ProductTypeStore> productTypeStores;
 
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = UserStore.class,
+            cascade = {CascadeType.REMOVE, CascadeType.DETACH}, orphanRemoval = true, mappedBy = "store")
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<UserStore> userStores;
+
     public Store() {
     }
 
-    public Store(String name, String address) {
+    public Store(String name, String description, Boolean isPublished) {
         this.name = name;
-        this.address = address;
+        this.description = description;
+        this.isPublished = isPublished;
+    }
+
+    public List<UserStore> getUserStores() {
+        return userStores;
+    }
+
+    public void setUserStores(List<UserStore> userStores) {
+        this.userStores = userStores;
     }
 
     public Long getId() {
@@ -43,12 +58,12 @@ public class Store {
         this.name = name;
     }
 
-    public String getAddress() {
-        return address;
+    public String getDescription() {
+        return description;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getFilename() {
@@ -65,5 +80,13 @@ public class Store {
 
     public void setProductTypeStores(List<ProductTypeStore> productTypeStores) {
         this.productTypeStores = productTypeStores;
+    }
+
+    public Boolean getPublished() {
+        return isPublished;
+    }
+
+    public void setPublished(Boolean published) {
+        isPublished = published;
     }
 }

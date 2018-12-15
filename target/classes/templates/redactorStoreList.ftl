@@ -1,7 +1,7 @@
 <#import "parts/common.ftl" as C>
 <@C.page>
 <div class="container mt-5">
-    <h2 class="mb-3">Product list</h2>
+    <h2 class="mb-3">Store list</h2>
     <#list stores as store>
         <div class="row">
             <div class="col-sm-12">
@@ -22,12 +22,16 @@
                         <div class="card-address">
                             <a href="#">
                                 <p class="card-title">${store.name}</p>
-                                <p>${store.address}<br>
+                                <p>${store.description}<br>
                                 </p>
                             </a>
                         </div>
                         <div class="card-phone">
+                            <#if store.published>
                             <a href="#" class="green"><span>Published</span></a>
+                            <#else>
+                            <a href="#" class="orange"><span>Pending</span></a>
+                            </#if>
                             <a href="/stores/${store.id}/edit" class="blue"><span>Edit</span></a>
                         </div>
                     </div>

@@ -39,7 +39,6 @@
 <body>
 <div>
         <#include "navbar.ftl">
-
         <#nested>
 </div>
 
