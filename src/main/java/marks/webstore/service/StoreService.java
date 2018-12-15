@@ -32,6 +32,7 @@ public class StoreService {
         storeRepo.save(store);
     }
 
+
     public Store findStoreById(Long id) {
         return storeRepo.findStoreById(id);
     }

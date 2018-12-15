@@ -1,6 +1,7 @@
 package marks.webstore.service;
 
 import marks.webstore.domain.ProductType;
+import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.domain.ProductTypeStore;
 import marks.webstore.repos.ProductTypeRepo;
 import marks.webstore.repos.ProductTypeStoreRepo;
