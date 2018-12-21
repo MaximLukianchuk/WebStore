@@ -16,8 +16,11 @@
                 <label for="inputGroupSelect01">Select store:</label>
                 <form>
                     <select class="custom-select" id="inputGroupSelect01" name="storeName">
+                        <option value="${curStore}">${curStore}</option>
                     <#list stores as store>
-                        <option value="${store.name}">${store.name}</option>
+                        <#if store.name != curStore>
+                            <option value="${store.name}">${store.name}</option>
+                        </#if>
                     </#list>
                     </select>
                 </form>
@@ -77,9 +80,29 @@
                             </#if>
                         </a>
                     </button>
+                    <#if isAdmin>
+                        <div class="col-md-11 mt-2">
+                            <label>Product description:</label>
+                            <textarea type="text" class="form-control" name="reason"
+                                      required>${product.description}</textarea>
+                        </div>
+                    </#if>
                 </div>
+                <#if isAdmin>
+                <div>
+                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
+                    <button type="submit" class="btn btn-primary btn-sm mt-2" style="width: 120px">
+                        <a href="/products/${product.id}/delete"
+                           style="color: white; text-decoration: none; display: block">
+                            Delete
+                        </a>
+                    </button>
+                </div>
+                </#if>
             </div>
         </div>
     </form>
+    <hr>
+    <h4>Product publication history:</h4>
 </div>
 </@c.page>

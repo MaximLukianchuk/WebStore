@@ -86,7 +86,7 @@ public class ProductController {
 
         if (productService.findAllProducts().stream().noneMatch(productType -> productType.getName().equals(name))) {
 
-            ProductType productType = new ProductType(name, price, description, discount, user.isAdmin());
+            ProductType productType = new ProductType(name, price, description, discount, user.isAdmin(), false);
 
             if (file != null && !file.getOriginalFilename().isEmpty()) {
                 File uploadDir = new File(uploadPath);
