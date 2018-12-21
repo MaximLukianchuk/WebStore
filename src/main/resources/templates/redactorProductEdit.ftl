@@ -80,25 +80,7 @@
                             </#if>
                         </a>
                     </button>
-                    <#if isAdmin>
-                        <div class="col-md-11 mt-2">
-                            <label>Product description:</label>
-                            <textarea type="text" class="form-control" name="reason"
-                                      required>${product.description}</textarea>
-                        </div>
-                    </#if>
                 </div>
-                <#if isAdmin>
-                <div>
-                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                    <button type="submit" class="btn btn-primary btn-sm mt-2" style="width: 120px">
-                        <a href="/products/${product.id}/delete"
-                           style="color: white; text-decoration: none; display: block">
-                            Delete
-                        </a>
-                    </button>
-                </div>
-                </#if>
             </div>
         </div>
     </form>
