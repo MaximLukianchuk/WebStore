@@ -45,7 +45,10 @@
 
 <div id="footer" class="text-center">
     <footer>
-        <p>Made by Mark-and-Max</p>
+        <p style="margin-right: 600px; color: white">© 2018-2019, «mark-and-max».</p>
+        <div style="background-color: #f3f3f3; height:150px ">
+
+        </div>
     </footer>
 </div>
 </body>

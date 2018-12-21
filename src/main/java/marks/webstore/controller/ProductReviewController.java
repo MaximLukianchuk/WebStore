@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -60,6 +61,7 @@ public class ProductReviewController {
         Long amountOfProducts = productStoreService.getAmountOfProducts(product);
         model.addAttribute("product", product);
         model.addAttribute("stores", storeService.findAllStores());
+        model.addAttribute("curStore", productStoreService.findStoreByProduct(product).getStore().getName());
         model.addAttribute("amountofproducts", amountOfProducts);
         return "redactorProductEdit";
     }
@@ -81,7 +83,7 @@ public class ProductReviewController {
         if (!productStoreService.isRedactorHasRoot(user, product)) {
             return "resources/public/error/403";
         }
-        productService.updateProduct(product, name, storeName, price, amount, description, user.isAdmin());
+        productService.updateProduct(product, name, storeName, price, amount, description, user.isAdmin(), false);
 
         return "redirect:/productsList";
     }

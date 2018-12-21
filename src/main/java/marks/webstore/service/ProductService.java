@@ -62,11 +62,13 @@ public class ProductService {
                               Double price,
                               Long amount,
                               String description,
-                              Boolean isPublished) {
+                              Boolean isPublished,
+                              Boolean isCanceled) {
         product.setName(name);
         product.setPrice(price);
         product.setDescription(description);
         product.setPublished(isPublished);
+        product.setCanceled(isCanceled);
         if (storeName != null) {
             productTypeStoreRepo.findAll().stream()
                     .filter(productTypeStore -> productTypeStore.getProduct().getId().equals(product.getId()))
