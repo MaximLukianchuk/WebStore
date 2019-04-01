@@ -9,7 +9,7 @@ Web service that is designed to simplify shopping from different stores at one t
 [![Author](https://img.shields.io/badge/author-MarkSmirnov13-lightgrey.svg)](https://github.com/MarkSmirnov13)
 [![Author](https://img.shields.io/badge/author-MaximLukianchuk-lightgrey.svg)](https://github.com/MaximLukianchuk)
 
-[![Preview](https://github.com/MaximLukianchuk/WebStore/blob/master/webStorePreviw.gif)]
+[![Preview](https://github.com/MaximLukianchuk/WebStore/blob/master/webStorePreviw.gif)](htpps://mark-and-max.store)
 
 ## Built With
 *   [Spring Boot](https://spring.io/projects/spring-boot) - Makes it easy to create stand-alone, production-grade Spring based Applications that you can "just run"
