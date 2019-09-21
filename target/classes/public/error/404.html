@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>404: Not Found</title>
+</head>
+<body>
+<h1 align="center">404 Not Found</h1>
+<hr>
+<p align="center" id="date"></p>
+</body>
+</html>
+
+<script>
+    n = new Date();
+    y = n.getFullYear();
+    m = n.getMonth() + 1;
+    d = n.getDate();
+    document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
+</script>

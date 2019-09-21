@@ -81,17 +81,6 @@
                         </a>
                     </button>
                 </div>
-                <#if isAdmin>
-                <div>
-                    <input type="hidden" name="_csrf" value="${_csrf.token}"/>
-                    <button type="submit" class="btn btn-primary btn-sm mt-2" style="width: 120px">
-                        <a href="/products/${product.id}/delete"
-                           style="color: white; text-decoration: none; display: block">
-                            Delete
-                        </a>
-                    </button>
-                </div>
-                </#if>
             </div>
         </div>
     </form>
