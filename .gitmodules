@@ -1,0 +1,6 @@
+[submodule "react"]
+	path = react
+	url = https://github.com/facebook/react.git
+[submodule "redux"]
+	path = redux
+	url = https://github.com/reduxjs/redux.git
