@@ -2,21 +2,13 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="postgres@webStore" uuid="d6f2aafe-75d4-4aff-93dc-8f89f3cde775">
-      <database-info product="PostgreSQL" version="11.0" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2" dbms="POSTGRES" exact-version="11.0">
+      <database-info product="PostgreSQL" version="11.0" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.2" family="POSTGRES" exact-version="11.0">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
       <user-name>postgres</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="database">
-            <name qname="@" />
-            <name qname="webStore" />
-            <node kind="schema" qname="@" />
-          </node>
-        </introspection-scope>
-      </schema-mapping>
+      <introspection-schemas>@:@</introspection-schemas>
     </data-source>
   </component>
 </project>
