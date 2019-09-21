@@ -27,6 +27,11 @@
             </#if>
             <#include "dropdown.ftl">
         </ul>
+        <div style="margin-right: 35px">
+            <form action="/search" class="form-inline">
+                <input class="form-control" name="name" type="text" placeholder="Search.." size="40" id="search">
+            </form>
+        </div>
         <#if name = "unknown">
             <@L.login2 />
         <#else>

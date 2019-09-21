@@ -71,6 +71,7 @@
             }, false);
         }, false);
     })();
+<<<<<<< HEAD
 
     function profileEdited() {
         swal("Poof! Your profile has been edited!", {
@@ -81,5 +82,7 @@
             }
         });
     }
+=======
+>>>>>>> 1ce13d41b9b87894c8cc897632d82249e7d777af
 </script>
 </@c.page>

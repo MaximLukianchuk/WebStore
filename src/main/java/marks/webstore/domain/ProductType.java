@@ -5,6 +5,7 @@ import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 public class ProductType {
@@ -12,10 +13,13 @@ public class ProductType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
     private String name;
-    private Float price;
+    private Double price;
     private String description;
     private Integer discount;
+    private Boolean isPublished;
+    private Boolean isCanceled;
 
     private String filename;
 
@@ -24,15 +28,22 @@ public class ProductType {
     @Fetch(value = FetchMode.SUBSELECT)
     private List<ProductTypeStore> productTypeStores;
 
+    @OneToMany(fetch = FetchType.EAGER, targetEntity = ProductPublicationHistory.class,
+            cascade = {CascadeType.REMOVE, CascadeType.DETACH}, orphanRemoval = true, mappedBy = "product")
+    @Fetch(value = FetchMode.SUBSELECT)
+    private List<ProductPublicationHistory> productPublicationHistories;
+
 
     public ProductType() {
     }
 
-    public ProductType(String name, Float price, String description, Integer discount) {
+    public ProductType(String name, Double price, String description, Integer discount, Boolean isPublished, Boolean isCanceled) {
         this.name = name;
-        this.price = price;
+        this.price = (double)Math.round(price * 100d) / 100d;
         this.description = description;
         this.discount = discount;
+        this.isPublished = isPublished;
+        this.isCanceled = isCanceled;
     }
 
     public Long getId() {
@@ -55,11 +66,11 @@ public class ProductType {
         this.filename = filename;
     }
 
-    public Float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -85,5 +96,29 @@ public class ProductType {
 
     public void setProductTypeStores(List<ProductTypeStore> productTypeStores) {
         this.productTypeStores = productTypeStores;
+    }
+
+    public Boolean getPublished() {
+        return isPublished;
+    }
+
+    public void setPublished(Boolean published) {
+        isPublished = published;
+    }
+
+    public Boolean getCanceled() {
+        return isCanceled;
+    }
+
+    public void setCanceled(Boolean canceled) {
+        isCanceled = canceled;
+    }
+
+    public List<ProductPublicationHistory> getProductPublicationHistories() {
+        return productPublicationHistories;
+    }
+
+    public void setProductPublicationHistories(List<ProductPublicationHistory> productPublicationHistories) {
+        this.productPublicationHistories = productPublicationHistories;
     }
 }

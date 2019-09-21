@@ -10,7 +10,9 @@
                         <a href="#">
                             <figure>
                             <#if producttype.filename??>
-                                <img class="card-img-top img-responsive" src="/img/${producttype.filename}" alt="" >
+                                <div class="wrapper img-wrap-list img-height-list">
+                                    <img class="img-responsive" src="/img/${producttype.filename}" alt="">
+                                </div>
                             </#if>
                             </figure>
                         </a>
@@ -25,7 +27,11 @@
                             </a>
                         </div>
                         <div class="card-phone">
+                            <#if producttype.published>
                             <a href="#" class="green"><span>Published</span></a>
+                            <#else>
+                            <a href="#" class="orange"><span>Pending</span></a>
+                            </#if>
                             <a href="/products/${producttype.id}/edit" class="blue"><span>Edit</span></a>
                         </div>
                     </div>

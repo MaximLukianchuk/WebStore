@@ -7,9 +7,9 @@
     <div class="row">
                 <#list productTypeStores as productTypeStore>
                     <div class="col-md-3 mt-4">
-                        <div class="card chooseCard text-center img">
+                        <div class="card chooseCard text-center">
                             <#if productTypeStore.product.filename??>
-                                <div class="wrapper">
+                                <div class="wrapper img-height img-wrap">
                                     <a href="/products/${productTypeStore.product.id}">
                                         <img class="card-img-top" src="/img/${productTypeStore.product.filename}" alt="Card image cap">
                                     </a>

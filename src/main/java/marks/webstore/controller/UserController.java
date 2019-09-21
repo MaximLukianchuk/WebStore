@@ -2,6 +2,9 @@ package marks.webstore.controller;
 
 import marks.webstore.domain.Role;
 import marks.webstore.domain.User;
+import marks.webstore.domain.UserStore;
+import marks.webstore.repos.UserStoreRepo;
+import marks.webstore.service.StoreService;
 import marks.webstore.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -12,12 +15,21 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
+
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private StoreService storeService;
+
+    @Autowired
+    private UserStoreRepo userStoreRepo;
 
     @PreAuthorize("hasAnyAuthority('ADMIN')")
     @GetMapping
@@ -31,6 +43,12 @@ public class UserController {
     public String userEditForm(@PathVariable User user, Model model) {
         model.addAttribute("user", user);
         model.addAttribute("roles", Role.values());
+        model.addAttribute("stores", storeService.findAllStores());
+        model.addAttribute("allowedToCreateStores", user.getAllowedToCreateStores());
+        model.addAttribute("userStores", userStoreRepo.findAllByUser(user).stream()
+                .map(UserStore::getStore)
+                .collect(Collectors.toList()));
+
         return "userEdit";
     }
 
@@ -56,6 +74,9 @@ public class UserController {
     @GetMapping("profile")
     public String getProfileSuccess(Model model, @AuthenticationPrincipal User user, @RequestParam(required = false) String success) {
         model.addAttribute("usr", user);
+        model.addAttribute("userStores", userStoreRepo.findAllByUser(user).stream()
+                .map(UserStore::getStore)
+                .collect(Collectors.toList()));
         if (success.equals("Proof"))
             model.addAttribute("success", "Your profile has been edited!");
 
@@ -65,7 +86,6 @@ public class UserController {
     @GetMapping("profile/edit")
     public String editProfile(Model model, @AuthenticationPrincipal User user) {
         model.addAttribute("usr", user);
-
         return "profileEdit";
     }
 

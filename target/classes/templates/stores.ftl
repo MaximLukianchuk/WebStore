@@ -6,15 +6,17 @@
         <div class="row">
             <#list stores as store>
                 <div class="col-md-4 mt-4">
-                    <div class="card chooseCard text-center img">
+                    <div class="card chooseCard text-center">
                         <#if store.filename??>
-                            <div class="wrapper">
-                                <img class="card-img-top" src="/img/${store.filename}" alt="Card image cap">
+                            <div class="wrapper img-height-store img-wrap-store">
+                                <img src="/img/${store.filename}" alt="Card image cap">
                             </div>
                         </#if>
                         <div class="card-body">
-                            <h5 class="card-title">${store.name}</h5>
-                            <p>${store.address}</p>
+                            <div style="height: 75px">
+                                <h5 class="card-title">${store.name}</h5>
+                                <p>${store.description}</p>
+                            </div>
                             <hr class="hr">
                                 <button type="submit" class="btn btn-primary see-prod"><a href="/stores/${store.id}" class="see-prod" style="text-decoration: none; display: block">
                                     See products

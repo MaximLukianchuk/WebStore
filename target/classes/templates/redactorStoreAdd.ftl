@@ -10,8 +10,8 @@
                     <input type="text" class="form-control" name="name" placeholder="Store name" required/>
                 </div>
                 <div class="col-md-4 mt-2">
-                    <label>Store address:</label>
-                    <input type="text" class="form-control" name="address" placeholder="Store address" required/>
+                    <label>Store description:</label>
+                    <input type="text" class="form-control" name="description" placeholder="Store description" required/>
                 </div>
                 <div class="col-md-4 mt-2">
                     <label>Choose file:</label>
