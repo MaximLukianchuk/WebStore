@@ -52,6 +52,9 @@
                             <h5>${producttype.price * (100 - producttype.discount) / 100} $</h5>
                             </p>
                             <hr class="hr">
+                            <button type="submit" class="btn btn-primary see-prod"><a href="/products/${producttype.id}?addedToCart" class="see-prod" style="text-decoration: none; display: block">
+                                See product
+                            </a></button>
                         </div>
                     </div>
                 </div>
